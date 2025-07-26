@@ -261,7 +261,7 @@
             padding-left: 0;
         }
 
-        .experience-description li {
+       .experience-description li {
             margin-bottom: 12px;
             padding-left: 20px;
             position: relative;
@@ -1207,7 +1207,7 @@
             'lits': 'iitd'
         };
 
-        function showOrg(orgId, event) {
+        function showOrg(orgId) {
             document.querySelectorAll('.org-content').forEach(content => {
                 content.classList.remove('active');
             });
@@ -1217,15 +1217,17 @@
             const orgPanel = document.getElementById(`org-${orgId}`);
             if (orgPanel) {
                 orgPanel.classList.add('active');
-                if (event) event.currentTarget.classList.add('active');
+                const orgTab = document.querySelector(`.org-tab[data-org="${orgId}"]`);
+                if (orgTab) {
+                    orgTab.classList.add('active');
+                }
             }
         }
 
-        function showProject(projectId, event, noScroll = false) {
+        function showProject(projectId, noScroll = false) {
             const orgId = projectToOrg[projectId];
             if (orgId) {
-                const orgTab = document.querySelector(`.org-tab[data-org="${orgId}"]`);
-                showOrg(orgId, {currentTarget: orgTab});
+                showOrg(orgId);
             }
             document.querySelectorAll('.project-content').forEach(content => {
                 content.classList.remove('active');
@@ -1236,9 +1238,15 @@
             const projectPanel = document.getElementById(`project-${projectId}`);
             if (projectPanel) {
                 projectPanel.classList.add('active');
-                if (event) event.currentTarget.classList.add('active');
+                const projectTab = document.querySelector(`.project-tab[data-project="${projectId}"]`);
+                if (projectTab) {
+                    projectTab.classList.add('active');
+                }
                 if (!noScroll) {
-                    projectPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const orgTabs = document.querySelector('.org-tabs');
+                    if (orgTabs) {
+                        orgTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
             }
         }
@@ -1260,22 +1268,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Org tab navigation
             document.querySelectorAll('.org-tab').forEach(tab => {
-                tab.addEventListener('click', function(e) {
+                tab.addEventListener('click', function() {
                     const orgId = this.dataset.org;
-                    showOrg(orgId, e);
+                    showOrg(orgId);
                     const firstProjectTab = document.querySelector(`#org-${orgId} .project-tab:first-child`);
                     if (firstProjectTab) {
                         const firstProjectId = firstProjectTab.dataset.project;
-                        showProject(firstProjectId, {currentTarget: firstProjectTab}, true);
+                        showProject(firstProjectId, true);
                     }
                 });
             });
 
             // Project tab navigation
             document.querySelectorAll('.project-tab').forEach(tab => {
-                tab.addEventListener('click', function(e) {
+                tab.addEventListener('click', function() {
                     const projectId = this.dataset.project;
-                    showProject(projectId, e);
+                    showProject(projectId);
                 });
             });
 
@@ -1307,7 +1315,7 @@
                     e.preventDefault();
                     const href = this.getAttribute('href');
                     const projectId = href.substring('#project-'.length);
-                    showProject(projectId, null);
+                    showProject(projectId);
                 });
             });
 
@@ -1316,7 +1324,7 @@
                 const hash = window.location.hash;
                 if (hash.startsWith('#project-')) {
                     const projectId = hash.substring('#project-'.length);
-                    showProject(projectId, null);
+                    showProject(projectId);
                 }
             }
 
