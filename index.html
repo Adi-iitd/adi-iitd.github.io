@@ -366,112 +366,232 @@
             border-top: 3px solid var(--text-color);
         }
 
-        .patents-list {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .patent-item {
+        .patent-tabs {
+            display: flex;
+            justify-content: center;
             margin-bottom: 30px;
-            padding: 25px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background: var(--white);
-            transition: var(--transition);
+            gap: 0;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
         }
 
-        .patent-item:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
+        .patent-tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            min-width: 100px;
+        }
+
+        .patent-tab:hover {
+            color: #2c2c2c;
+            background: rgba(44, 44, 44, 0.05);
+        }
+
+        .patent-tab.active {
+            color: #fff;
+            background: linear-gradient(135deg, #2c2c2c, #444);
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .patent-content {
+            display: none;
+            background: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .patent-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2c2c2c, #666);
+        }
+
+        .patent-content.active {
+            display: block;
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .patent-header {
+            margin-bottom: 25px;
         }
 
         .patent-title {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            color: #2c2c2c;
+            margin-bottom: 12px;
             line-height: 1.4;
             font-weight: 600;
-            color: var(--primary-color);
+        }
+
+        .patent-meta {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .patent-number {
-            color: var(--text-light);
+            color: #666;
             font-size: 14px;
-            margin-bottom: 8px;
             font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
         }
 
         .patent-status {
-            color: var(--accent-color);
+            color: #1a73e8;
             font-size: 14px;
             font-weight: 500;
-            margin-bottom: 12px;
+            background: rgba(26, 115, 232, 0.1);
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(26, 115, 232, 0.2);
         }
 
         .patent-description {
-            color: var(--text-dark);
+            color: #555;
             font-size: 16px;
-            margin: 0;
             text-align: justify;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin: 0;
         }
 
-        .patent-separator {
-            width: 20%;
-            margin: 40px auto;
-            border: none;
-            border-top: 2px solid var(--border-color);
+        @media (max-width: 768px) {
+            .patent-tabs {
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .patent-tab {
+                width: 200px;
+                text-align: center;
+            }
+
+            .patent-content {
+                padding: 25px 20px;
+            }
+
+            .patent-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
 
         /* ============ PROJECTS ============ */
+        .org-tabs,
         .project-tabs {
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
+            gap: 0;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             flex-wrap: wrap;
-            gap: 10px;
         }
 
+        .org-tab,
         .project-tab {
-            padding: 12px 20px;
+            padding: 12px 24px;
             cursor: pointer;
             border: none;
-            background: var(--white);
-            color: var(--text-light);
+            background: transparent;
+            color: #666;
             font-size: 14px;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-family: inherit;
-            transition: var(--transition);
-            border-bottom: 3px solid transparent;
-            margin-bottom: -1px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            min-width: 100px;
         }
 
+        .org-tab:hover,
         .project-tab:hover {
-            color: var(--primary-color);
+            color: #2c2c2c;
+            background: rgba(44, 44, 44, 0.05);
         }
 
+        .org-tab.active,
         .project-tab.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
+            color: #fff;
+            background: linear-gradient(135deg, #2c2c2c, #444);
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.3);
+            transform: translateY(-1px);
         }
 
+        .org-content,
         .project-content {
             display: none;
-            background: var(--white);
-            padding: 30px;
-            margin-bottom: 15px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
         }
 
+        .org-content::before,
+        .project-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2c2c2c, #666);
+        }
+
+        .org-content.active,
         .project-content.active {
             display: block;
-            animation: fadeIn 0.3s ease-in;
+            animation: fadeInUp 0.4s ease-out;
         }
 
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from { 
                 opacity: 0; 
-                transform: translateY(10px); 
+                transform: translateY(20px); 
             }
             to { 
                 opacity: 1; 
@@ -500,10 +620,6 @@
             color: var(--text-light);
             font-size: 16px;
             font-style: italic;
-        }
-
-        .project-icon {
-            font-size: 32px;
         }
 
         .project-description ul {
@@ -592,11 +708,13 @@
                 height: 120px;
             }
 
+            .org-tabs,
             .project-tabs {
                 flex-direction: column;
                 align-items: center;
             }
 
+            .org-tab,
             .project-tab {
                 width: 200px;
                 text-align: center;
@@ -729,9 +847,9 @@
                     </div>
                     <div class="experience-description">
                         <ul>
-                            <li><strong><a href="#project-fashionai">FashionAI (Generative Design):</a></strong> Fine-tuned a diffusion model with full attribute control to generate high-fidelity fashion prototypes tailored to seller and platform requirements. Enabled attribute-conditioned image synthesis for guided design exploration, unlocking new monetization opportunities through generative fashion catalogs.</li>
+                            <li><strong><a href="#project-fashionai" class="project-link">FashionAI (Generative Design):</a></strong> Fine-tuned a diffusion model with full attribute control to generate high-fidelity fashion prototypes tailored to seller and platform requirements. Enabled attribute-conditioned image synthesis for guided design exploration, unlocking new monetization opportunities through generative fashion catalogs.</li>
                             
-                            <li><strong><a href="#project-cip">Competitive Intelligence Platform (CIP):</a></strong> Built an NLP-driven social analytics engine to track brand performance across five major social platforms, tagging feedback by aspect, business unit, and sentiment. Leveraged few-shot learning and unsupervised clustering to extract hierarchical pain points—L1 aspects like Delivery or Cancellation, and L2 sub-aspects such as delivery SLA. Powered CXOs dashboards with CIP-derived insights, predicting weekly NPS with ~1% MAPE and BU-level market share with 1.5% MAE using regression ensembles.</li>
+                            <li><strong><a href="#project-cip" class="project-link">Competitive Intelligence Platform (CIP):</a></strong> Built an NLP-driven social analytics engine to track brand performance across five major social platforms, tagging feedback by aspect, business unit, and sentiment. Leveraged few-shot learning and unsupervised clustering to extract hierarchical pain points—L1 aspects like Delivery or Cancellation, and L2 sub-aspects such as delivery SLA. Powered CXOs dashboards with CIP-derived insights, predicting weekly NPS with ~1% MAPE and BU-level market share with 1.5% MAE using regression ensembles.</li>
                         </ul>
                     </div>
                 </div>
@@ -745,9 +863,9 @@
                     </div>
                     <div class="experience-description">
                         <ul>
-                            <li><strong><a href="#project-airwriting">Gesture Recognition:</a></strong> Developed a sensor-free hand gesture recognition system for Latin characters and emojis. Achieved 98% IoU on hand segmentation using a MobileNet + DenseASPP architecture with curriculum learning, and 90% gesture classification accuracy via a DenseNet model, enabling real-time human-computer interaction in VR/AR environments.</li>
+                            <li><strong><a href="#project-airwriting" class="project-link">Gesture Recognition:</a></strong> Developed a sensor-free hand gesture recognition system for Latin characters and emojis. Achieved 98% IoU on hand segmentation using a MobileNet + DenseASPP architecture with curriculum learning, and 90% gesture classification accuracy via a DenseNet model, enabling real-time human-computer interaction in VR/AR environments.</li>
                             
-                            <li><strong><a href="#project-compositing">Photorealistic Image Compositing:</a></strong> Used a Conditional GAN (Pix2Pix) to generate visually realistic composites with enhanced aesthetics. Trained a CNN in an unsupervised setting to model human perception of realism, and curated a custom dataset from COCO with color transfer improvements using learnable transformation functions.</li>
+                            <li><strong><a href="#project-compositing" class="project-link">Photorealistic Image Compositing:</a></strong> Used a Conditional GAN (Pix2Pix) to generate visually realistic composites with enhanced aesthetics. Trained a CNN in an unsupervised setting to model human perception of realism, and curated a custom dataset from COCO with color transfer improvements using learnable transformation functions.</li>
                         </ul>
                     </div>
                 </div>
@@ -761,7 +879,7 @@
                     </div>
                     <div class="experience-description">
                         <ul>
-                            <li><strong><a href="#project-lits">Liver & Lesion Segmentation (LiTS):</a></strong> Collaborated with Medanta Hospital to automate liver and lesion segmentation from abdominal CT volumes using H-DenseUNet, achieving a Dice coefficient of 0.96 for liver segmentation. Improved patient-level classification accuracy by 20% across Healthy, Cirrhosis, and HCC categories by incorporating radiologist-supervised handcrafted features and SVM-based analysis.</li>
+                            <li><strong><a href="#project-lits" class="project-link">Liver & Lesion Segmentation (LiTS):</a></strong> Collaborated with Medanta Hospital to automate liver and lesion segmentation from abdominal CT volumes using H-DenseUNet, achieving a Dice coefficient of 0.96 for liver segmentation. Improved patient-level classification accuracy by 20% across Healthy, Cirrhosis, and HCC categories by incorporating radiologist-supervised handcrafted features and SVM-based analysis.</li>
                         </ul>
                     </div>
                 </div>
@@ -802,6 +920,22 @@
                             <p class="publication-intro">This work introduces a mechanism to implicitly approximate customer experience from social media mentions across major platforms like Twitter and Instagram. Using NLP techniques, it tags feedback by aspects and sentiment to extract pain points. The platform enables CXOs to track market share and predict NPS with high accuracy. It also surfaces emerging trends and competitor comparisons in real time, helping brands proactively respond to shifting consumer perceptions.</p>
                         </div>
                     </div>
+
+                    <hr class="pub-separator">
+
+                    <div class="publication-item">
+                        <div class="publication-image">
+                            <img src="assets/publication3.jpg" alt="Publication 3">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="https://drive.google.com/file/d/1mDJwAXSOvEb3-SgBYVHs-JF7Y9HJASKd/view?usp=sharing" target="_blank">SMT5: Leveraging Social Media and T5 to Understand Online Shopping Experience</a>
+                            </div>
+                            <div class="publication-authors">A. Kumar</div>
+                            <div class="publication-venue">Flipkart Data Science Conference, 2022</div>
+                            <p class="publication-intro">This paper introduces a multi-stage deep learning pipeline that extracts actionable VoC insights from social media posts in English, Hindi, and Hinglish. By leveraging real-time, large-scale user feedback from platforms like Twitter and Instagram, it overcomes the limitations of traditional survey-based methods. The pipeline identifies customer pain points and product-specific experiences at each journey stage, offering organizations a scalable, cost-effective solution for understanding and improving customer satisfaction.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -811,78 +945,182 @@
             <div class="container">
                 <h2 class="section-title">Project Details</h2>
                 <div class="projects-container">
-                    <div class="project-tabs">
-                        <button class="project-tab active" data-project="search">Search System</button>
-                        <button class="project-tab" data-project="frying">Frying Model</button>
-                        <button class="project-tab" data-project="segmentation">Food Segmentation</button>
-                        <button class="project-tab" data-project="auditors">Quality Auditors</button>
+                    <div class="org-tabs">
+                        <button class="org-tab active" data-org="posha">Posha</button>
+                        <button class="org-tab" data-org="flipkart">Flipkart</button>
+                        <button class="org-tab" data-org="samsung">Samsung Research</button>
+                        <button class="org-tab" data-org="iitd">IIT Delhi</button>
                     </div>
 
-                    <div id="project-search" class="project-content active">
-                        <div class="project-header">
-                            <h3 class="project-title">
-                                <span class="project-icon">🔍</span>
-                                Search and Recommendation System
-                            </h3>
-                            <p class="project-subtitle">Production-grade hybrid search engine with semantic understanding</p>
+                    <div id="org-posha" class="org-content active">
+                        <div class="project-tabs">
+                            <button class="project-tab active" data-project="search">Search System</button>
+                            <button class="project-tab" data-project="frying">Frying Model</button>
+                            <button class="project-tab" data-project="segmentation">Food Segmentation</button>
+                            <button class="project-tab" data-project="auditors">Quality Auditors</button>
                         </div>
-                        <div class="project-description">
-                            <ul>
-                                <li>Addressed poor search performance in a consumer kitchen assistant app serving <strong>700-800</strong> daily queries by designing and deploying a production-grade hybrid search engine combining <strong>BM25 with GIST-Embedding-v0</strong> semantic models across <strong>1,000 recipes and 200 ingredients</strong>. Overcame lack of real training data due to missing user logs by training custom domain-specific embedding models using synthetic datasets generated through LLM-based augmentation and classical NLP techniques <strong>(character swaps, Levenshtein ≤3)</strong>, enabling semantic understanding of ingredient substitutions, recipe variations, and Hindi-English code-mixed queries.</li>
-                                <li>Solved poor fuzzy query handling by building a robust multilingual query correction system trained on synthetic spelling variants and transliteration patterns, enabling accurate retrieval for misspelled or multilingual inputs in Hindi and English. Eliminated slow search latency by optimizing infrastructure with <strong>FAISS binary quantized vectors for sub-20ms</strong> candidate generation, followed by full-precision re-ranking with personalized user embeddings, maintaining Elasticsearch-comparable performance while adding semantic capabilities.</li>
-                                <li><strong>Delivered measurable business impact</strong> through <strong>30% improvement in NDCG@5</strong> for exact matches, <strong>20% increase in recipe conversion rate</strong> (A/B tested), and <strong>70% retrieval success for previously unsupported fuzzy queries</strong> (compared to 0% baseline).</li>
-                                <li>Extended the trained semantic embeddings to power personalized recipe recommendations, combining <strong>content-based filtering</strong> (user preferences, dietary tags, cooking history) with <strong>collaborative filtering</strong> from similar users' behavior to deliver relevant suggestions for returning users. Solved the cold-start problem for new users with no cooking history by introducing an onboarding flow: users answer a short questionnaire <strong>(e.g., allergens, dietary habits, cuisine preferences, region) and select 3+ recipes</strong> from a tailored list. This information is used to build an initial user profile that powers content-based recommendations from day one—similar to onboarding flows in Netflix and Spotify.</li>
-                            </ul>
+
+                        <div id="project-search" class="project-content active">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">🔍</span>
+                                    Search and Recommendation System
+                                </h3>
+                                <p class="project-subtitle">Production-grade hybrid search engine with semantic understanding</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Addressed poor search performance in a consumer kitchen assistant app serving <strong>700-800</strong> daily queries by designing and deploying a production-grade hybrid search engine combining <strong>BM25 with GIST-Embedding-v0</strong> semantic models across <strong>1,000 recipes and 200 ingredients</strong>. Overcame lack of real training data due to missing user logs by training custom domain-specific embedding models using synthetic datasets generated through LLM-based augmentation and classical NLP techniques <strong>(character swaps, Levenshtein ≤3)</strong>, enabling semantic understanding of ingredient substitutions, recipe variations, and Hindi-English code-mixed queries.</li>
+                                    <li>Solved poor fuzzy query handling by building a robust multilingual query correction system trained on synthetic spelling variants and transliteration patterns, enabling accurate retrieval for misspelled or multilingual inputs in Hindi and English. Eliminated slow search latency by optimizing infrastructure with <strong>FAISS binary quantized vectors for sub-20ms</strong> candidate generation, followed by full-precision re-ranking with personalized user embeddings, maintaining Elasticsearch-comparable performance while adding semantic capabilities.</li>
+                                    <li><strong>Delivered measurable business impact</strong> through <strong>30% improvement in NDCG@5</strong> for exact matches, <strong>20% increase in recipe conversion rate</strong> (A/B tested), and <strong>70% retrieval success for previously unsupported fuzzy queries</strong> (compared to 0% baseline).</li>
+                                    <li>Extended the trained semantic embeddings to power personalized recipe recommendations, combining <strong>content-based filtering</strong> (user preferences, dietary tags, cooking history) with <strong>collaborative filtering</strong> from similar users' behavior to deliver relevant suggestions for returning users. Solved the cold-start problem for new users with no cooking history by introducing an onboarding flow: users answer a short questionnaire <strong>(e.g., allergens, dietary habits, cuisine preferences, region) and select 3+ recipes</strong> from a tailored list. This information is used to build an initial user profile that powers content-based recommendations from day one—similar to onboarding flows in Netflix and Spotify.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="project-frying" class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">🍲</span>
+                                    Universal Frying Model (UFM)
+                                </h3>
+                                <p class="project-subtitle">Swin Transformer regression model for real-time doneness prediction</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Eliminated inconsistent cooking outcomes caused by fixed-timer failures by developing a <strong>Swin Transformer</strong> regression model that predicts ingredient doneness on a continuous <strong>0–1 scale</strong> using real-time visual cues. Solved training data scarcity by designing a bucketed data generation pipeline with labeled intervals <strong>(0.25–0.75)</strong> across lighting conditions, and synthesizing realistic multi-ingredient scenes via area-weighted label mixing with adjacent-bucket constraints.</li>
+                                    <li>Achieved real-time inference by deploying a monitoring loop that processes raw camera frames every <strong>10 seconds</strong> with no preprocessing, delivering <strong>~30ms latency on cloud</strong> and <strong>~100ms on edge devices</strong> during active frying. Demonstrated strong generalization across diverse conditions with <strong>0.025 MAE</strong> on validation data from disjoint sessions and unseen lighting environments.</li>
+                                    <li>Improved recipe quality by dynamically adapting frying duration to actual visual progression, eliminating timing-based failures and ensuring consistent results across ingredient variations and user prep styles.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="project-segmentation" class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">🥘</span>
+                                    Food and Ingredient Segmentation with Dispense Localization
+                                </h3>
+                                <p class="project-subtitle">Real-time SegFormer pipeline for ingredient detection and classification</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Addressed unreliable ingredient detection in cluttered kitchen environments by developing a real-time <strong>SegFormer</strong> segmentation pipeline for pan, food, robotic arms, and background detection, trained on <strong>1,500 annotated images</strong> across challenging conditions (occlusion, glare, low light). Overcame limited training data constraints by implementing self-distillation using <strong>2,000 pseudo-labeled frames</strong> with <strong>≥95% confidence</strong>, achieving <strong>97% mean IoU</strong> with a <strong>+1% gain</strong> from the expanded dataset.</li>
+                                    <li>Solved ingredient identification challenges in mixed food scenarios by building a dispense localization module triggered <strong>2 seconds</strong> after each ingredient addition (max <strong>4 times per recipe</strong>), achieving <strong>90% IoU</strong> with a <strong>+3.5% improvement</strong> from distillation-based training. Improved ingredient classification by integrating <strong>Swin Transformer</strong> on localized regions, achieving <strong>85% accuracy</strong> and <strong>82% F1 score</strong> compared to sub-60% accuracy on full-pan images.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="project-auditors" class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">🕵</span>
+                                    Vision-Based Quality Auditors for Robotic Cooking
+                                </h3>
+                                <p class="project-subtitle">YOLOv8 and SegFormer systems for automated quality control</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Prevented unreliable predictions from degraded visual inputs by developing a <strong>YOLOv8</strong> image quality checker as first-stage validation, trained on <strong>5,000 edge-case images</strong> to detect blur, poor lighting, and occlusions, achieving <strong>92.5% IoU</strong> and <strong>99.2% F1 score</strong>. Implemented automated failure recovery by pausing recipe execution after <strong>5 consecutive bad frames</strong> and prompting user camera cleaning, preventing cascading errors in downstream vision models.</li>
+                                    <li>Addressed splatter buildup in gravy-heavy recipes by building a <strong>SegFormer</strong>-based splatter detection system trained on <strong>500 annotated images</strong>, achieving <strong>70% IoU</strong> and automatically increasing stirrer speed to <strong>90%</strong> when splatter exceeds <strong>1%</strong> threshold.</li>
+                                    <li>Eliminated food safety risks from undercooked lumps by implementing segmentation-based lump detection for meat (<strong>82% IoU</strong>) and noodles (<strong>88% IoU</strong>), triggering automated interventions (<strong>100ml water</strong> for noodles, <strong>50ml water + re-stirring</strong> for meat) to replicate human corrective actions.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div id="project-frying" class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">
-                                <span class="project-icon">🍲</span>
-                                Universal Frying Model (UFM)
-                            </h3>
-                            <p class="project-subtitle">Swin Transformer regression model for real-time doneness prediction</p>
+                    <div id="org-flipkart" class="org-content">
+                        <div class="project-tabs">
+                            <button class="project-tab active" data-project="fashionai">FashionAI</button>
+                            <button class="project-tab" data-project="cip">CIP</button>
                         </div>
-                        <div class="project-description">
-                            <ul>
-                                <li>Eliminated inconsistent cooking outcomes caused by fixed-timer failures by developing a <strong>Swin Transformer</strong> regression model that predicts ingredient doneness on a continuous <strong>0–1 scale</strong> using real-time visual cues. Solved training data scarcity by designing a bucketed data generation pipeline with labeled intervals <strong>(0.25–0.75)</strong> across lighting conditions, and synthesizing realistic multi-ingredient scenes via area-weighted label mixing with adjacent-bucket constraints.</li>
-                                <li>Achieved real-time inference by deploying a monitoring loop that processes raw camera frames every <strong>10 seconds</strong> with no preprocessing, delivering <strong>~30ms latency on cloud</strong> and <strong>~100ms on edge devices</strong> during active frying. Demonstrated strong generalization across diverse conditions with <strong>0.025 MAE</strong> on validation data from disjoint sessions and unseen lighting environments.</li>
-                                <li>Improved recipe quality by dynamically adapting frying duration to actual visual progression, eliminating timing-based failures and ensuring consistent results across ingredient variations and user prep styles.</li>
-                            </ul>
+
+                        <div id="project-fashionai" class="project-content active">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">🎨</span>
+                                    FashionAI (Generative Design)
+                                </h3>
+                                <p class="project-subtitle">Fine-tuned diffusion model for attribute-controlled fashion generation</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Fine-tuned a diffusion model with full attribute control to generate high-fidelity fashion prototypes tailored to seller and platform requirements. Enabled attribute-conditioned image synthesis for guided design exploration, unlocking new monetization opportunities through generative fashion catalogs.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="project-cip" class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">📊</span>
+                                    Competitive Intelligence Platform (CIP)
+                                </h3>
+                                <p class="project-subtitle">NLP-driven social analytics for brand performance tracking</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Built an NLP-driven social analytics engine to track brand performance across five major social platforms, tagging feedback by aspect, business unit, and sentiment. Leveraged few-shot learning and unsupervised clustering to extract hierarchical pain points—L1 aspects like Delivery or Cancellation, and L2 sub-aspects such as delivery SLA. Powered CXOs dashboards with CIP-derived insights, predicting weekly NPS with ~1% MAPE and BU-level market share with 1.5% MAE using regression ensembles.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div id="project-segmentation" class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">
-                                <span class="project-icon">🥘</span>
-                                Food and Ingredient Segmentation with Dispense Localization
-                            </h3>
-                            <p class="project-subtitle">Real-time SegFormer pipeline for ingredient detection and classification</p>
+                    <div id="org-samsung" class="org-content">
+                        <div class="project-tabs">
+                            <button class="project-tab active" data-project="airwriting">Gesture Recognition</button>
+                            <button class="project-tab" data-project="compositing">Image Compositing</button>
                         </div>
-                        <div class="project-description">
-                            <ul>
-                                <li>Addressed unreliable ingredient detection in cluttered kitchen environments by developing a real-time <strong>SegFormer</strong> segmentation pipeline for pan, food, robotic arms, and background detection, trained on <strong>1,500 annotated images</strong> across challenging conditions (occlusion, glare, low light). Overcame limited training data constraints by implementing self-distillation using <strong>2,000 pseudo-labeled frames</strong> with <strong>≥95% confidence</strong>, achieving <strong>97% mean IoU</strong> with a <strong>+1% gain</strong> from the expanded dataset.</li>
-                                <li>Solved ingredient identification challenges in mixed food scenarios by building a dispense localization module triggered <strong>2 seconds</strong> after each ingredient addition (max <strong>4 times per recipe</strong>), achieving <strong>90% IoU</strong> with a <strong>+3.5% improvement</strong> from distillation-based training. Improved ingredient classification by integrating <strong>Swin Transformer</strong> on localized regions, achieving <strong>85% accuracy</strong> and <strong>82% F1 score</strong> compared to sub-60% accuracy on full-pan images.</li>
-                            </ul>
+
+                        <div id="project-airwriting" class="project-content active">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">✋</span>
+                                    Gesture Recognition
+                                </h3>
+                                <p class="project-subtitle">Sensor-free hand gesture recognition for characters and emojis</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Developed a sensor-free hand gesture recognition system for Latin characters and emojis. Achieved 98% IoU on hand segmentation using a MobileNet + DenseASPP architecture with curriculum learning, and 90% gesture classification accuracy via a DenseNet model, enabling real-time human-computer interaction in VR/AR environments.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="project-compositing" class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">🖼️</span>
+                                    Photorealistic Image Compositing
+                                </h3>
+                                <p class="project-subtitle">Conditional GAN for realistic image composition</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Used a Conditional GAN (Pix2Pix) to generate visually realistic composites with enhanced aesthetics. Trained a CNN in an unsupervised setting to model human perception of realism, and curated a custom dataset from COCO with color transfer improvements using learnable transformation functions.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div id="project-auditors" class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">
-                                <span class="project-icon">🕵</span>
-                                Vision-Based Quality Auditors for Robotic Cooking
-                            </h3>
-                            <p class="project-subtitle">YOLOv8 and SegFormer systems for automated quality control</p>
+                    <div id="org-iitd" class="org-content">
+                        <div class="project-tabs">
+                            <button class="project-tab active" data-project="lits">LiTS</button>
                         </div>
-                        <div class="project-description">
-                            <ul>
-                                <li>Prevented unreliable predictions from degraded visual inputs by developing a <strong>YOLOv8</strong> image quality checker as first-stage validation, trained on <strong>5,000 edge-case images</strong> to detect blur, poor lighting, and occlusions, achieving <strong>92.5% IoU</strong> and <strong>99.2% F1 score</strong>. Implemented automated failure recovery by pausing recipe execution after <strong>5 consecutive bad frames</strong> and prompting user camera cleaning, preventing cascading errors in downstream vision models.</li>
-                                <li>Addressed splatter buildup in gravy-heavy recipes by building a <strong>SegFormer</strong>-based splatter detection system trained on <strong>500 annotated images</strong>, achieving <strong>70% IoU</strong> and automatically increasing stirrer speed to <strong>90%</strong> when splatter exceeds <strong>1%</strong> threshold.</li>
-                                <li>Eliminated food safety risks from undercooked lumps by implementing segmentation-based lump detection for meat (<strong>82% IoU</strong>) and noodles (<strong>88% IoU</strong>), triggering automated interventions (<strong>100ml water</strong> for noodles, <strong>50ml water + re-stirring</strong> for meat) to replicate human corrective actions.</li>
-                            </ul>
+
+                        <div id="project-lits" class="project-content active">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">🩺</span>
+                                    Liver & Lesion Segmentation (LiTS)
+                                </h3>
+                                <p class="project-subtitle">Automated segmentation and classification for liver CT scans</p>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Collaborated with Medanta Hospital to automate liver and lesion segmentation from abdominal CT volumes using H-DenseUNet, achieving a Dice coefficient of 0.96 for liver segmentation. Improved patient-level classification accuracy by 20% across Healthy, Cirrhosis, and HCC categories by incorporating radiologist-supervised handcrafted features and SVM-based analysis.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -892,39 +1130,56 @@
         <section id="patents" class="section">
             <div class="container">
                 <h2 class="section-title">Patents</h2>
-                <div class="patents-list">
-                    <div class="patent-item">
-                        <div class="patent-title">COUNTERTOP COOKING ROBOT</div>
-                        <div class="patent-number">PCT/US2024/061909</div>
-                        <div class="patent-status">Issued Jul 3, 2025</div>
+                <div class="patents-container">
+                    <div class="patent-tabs">
+                        <button class="patent-tab active" data-patent="1">Patent 1</button>
+                        <button class="patent-tab" data-patent="2">Patent 2</button>
+                        <button class="patent-tab" data-patent="3">Patent 3</button>
+                        <button class="patent-tab" data-patent="4">Patent 4</button>
+                    </div>
+    
+                    <div id="patent-1" class="patent-content active">
+                        <div class="patent-header">
+                            <div class="patent-title">COUNTERTOP COOKING ROBOT</div>
+                            <div class="patent-meta">
+                                <div class="patent-number">PCT/US2024/061909</div>
+                                <div class="patent-status">Issued Jul 3, 2025</div>
+                            </div>
+                        </div>
                         <p class="patent-description">A countertop cooking appliance that uses machine learning models to automatically prepare a plurality of different meals is described. The appliance includes a micro dispensing system containing a plurality of pods having granular contents. The pod rotation mechanism moves a selected pod into a position above a pan to dispense the granular contents. The rotation element rotates the selected pod to dispense an amount of granular content from the dispensing section with each rotation of the selected pod by the rotation element. The appliance may also include a stirrer that uses at least one spatula to gradually contact substantially an entire area of the pan after the stirrer completes a rotation cycle. Control circuitry coupled to a macro ingredient delivery system, the micro dispensing system, the stirrer, a heating element, and sensors performs recipe methods using a plurality of computer vision models to monitor recipe progress.</p>
                     </div>
-        
-                    <hr class="patent-separator">
-        
-                    <div class="patent-item">
-                        <div class="patent-title">METHOD AND SYSTEM FOR MANAGING SENSOR OPERATION WITH RESPECT TO ACTIVITY</div>
-                        <div class="patent-number">202011042598</div>
-                        <div class="patent-status">Issued Jan 8, 2024</div>
+    
+                    <div id="patent-2" class="patent-content">
+                        <div class="patent-header">
+                            <div class="patent-title">METHOD AND SYSTEM FOR MANAGING SENSOR OPERATION WITH RESPECT TO ACTIVITY</div>
+                            <div class="patent-meta">
+                                <div class="patent-number">202011042598</div>
+                                <div class="patent-status">Issued Jan 8, 2024</div>
+                            </div>
+                        </div>
                         <p class="patent-description">The present subject matter refers a method for managing sensor operation with respect to sensor operation in a computing device. The method comprises detecting an activity based on at least one application in a computing device. An operation of a plurality of sensors within the device is monitored based on the detected activity. At-least one sensor is detected among the plurality of sensors based on said monitored operation. A set of sensors outputting readings within the device are selected, said selected set comprising at least one of one or more of said plurality of monitored sensors other than the ascertained sensor. A value for the detected activity is determined based on computing value of said at least one ascertained sensor based on a learned relation among the selected set of sensors and the outputted readings of one or more sensors within the selected set of sensors.</p>
                     </div>
-        
-                    <hr class="patent-separator">
-        
-                    <div class="patent-item">
-                        <div class="patent-title">SYSTEM AND METHOD FOR DETERMINING MARKET SHARE OF AN ORGANIZATION</div>
-                        <div class="patent-number">202141036284</div>
-                        <div class="patent-status">Filed Aug 11, 2021</div>
-                        <p class="patent-description">A system and method for determining market share of an organization. The method encompasses receiving, at least one of a voice of customer data, an internal data of the organization and an external data. The method thereafter leads to determining, one or more set of target features based on at least one of the voice of customer data, the internal data of the organization and the external data. Further the method comprises generating, one or more pre-trained dataset based at least on the one or more set of target features. The method thereafter encompasses receiving, at least one of a first set of feature constraints and a second set of feature constraints. Further the method comprises determining, the market share of the organization based at least on the one or more pretrained dataset, the first set of feature constraints and the second set of feature constraints.</p>
+    
+                    <div id="patent-3" class="patent-content">
+                        <div class="patent-header">
+                            <div class="patent-title">SYSTEM AND METHOD FOR DETERMINING MARKET SHARE OF AN ORGANIZATION</div>
+                            <div class="patent-meta">
+                                <div class="patent-number">202141036284</div>
+                                <div class="patent-status">Filed Aug 11, 2021</div>
+                            </div>
+                        </div>
+                        <p class="patent-description">A system and method for determining market share of an organization. The method encompasses receiving, at least one of a voice of customer data, an internal data of the organization and an external data. The method thereafter encompasses determining, one or more set of target features based on at least one of the voice of customer data, the internal data of the organization and the external data. Further the method comprises generating, one or more pre-trained dataset based at least on the one or more set of target features. The method thereafter encompasses receiving, at least one of a first set of feature constraints and a second set of feature constraints. Further the method comprises determining, the market share of the organization based at least on the one or more pretrained dataset, the first set of feature constraints and the second set of feature constraints.</p>
                     </div>
-        
-                    <hr class="patent-separator">
-        
-                    <div class="patent-item">
-                        <div class="patent-title">SYSTEM AND METHOD FOR GENERATION OF A USER FEEDBACK DATA</div>
-                        <div class="patent-number">202141010012</div>
-                        <div class="patent-status">Filed Mar 10, 2021</div>
-                        <p class="patent-description">A system and method for generation of a user feedback data is provided. The method encompasses extracting in real time, from social media platforms, a set of social media posts, wherein each social media post comprises mentions related to e-commerce platforms. The method thereafter encompasses categorizing, each social media post into one of a promotional post and non-promotional post. The method further comprises identifying, a sentiment associated with each social media post. Further, the method encompasses assigning, a customer experience node and/or a business unit with the social media posts. The method thereafter leads to removing, irrelevant posts from the set of social media posts. The method then generates the user feedback data based on the removal of the at least one irrelevant post and the assigned customer experience node, the assigned business unit and/or the sentiment of each social media post.</p>
+    
+                    <div id="patent-4" class="patent-content">
+                        <div class="patent-header">
+                            <div class="patent-title">SYSTEM AND METHOD FOR GENERATION OF A USER FEEDBACK DATA</div>
+                            <div class="patent-meta">
+                                <div class="patent-number">202141010012</div>
+                                <div class="patent-status">Filed Mar 10, 2021</div>
+                            </div>
+                        </div>
+                        <p class="patent-description">A system and method for generation of a user feedback data is provided. The method encompasses extracting in real time, from social media platforms, a set of social media posts, wherein each social media post comprises mentions related to e-commerce platforms. The method thereafter encompasses categorizing, each social media post into one of a promotional post and non-promotional post. The method further encompasses identifying, a sentiment associated with each social media post. Further, the method encompasses assigning, a customer experience node and/or a business unit with the social media posts. The method thereafter leads to removing, irrelevant posts from the set of social media posts. The method then generates the user feedback data based on the removal of the at least one irrelevant post and the assigned customer experience node, the assigned business unit and/or the sentiment of each social media post.</p>
                     </div>
                 </div>
             </div>
@@ -940,34 +1195,95 @@
     </main>
 
     <script>
-        // ============ PROJECT NAVIGATION ============
-        function showProject(projectId, event) {
-            // Hide all project contents
-            document.querySelectorAll('.project-content').forEach(content => {
+        const projectToOrg = {
+            'search': 'posha',
+            'frying': 'posha',
+            'segmentation': 'posha',
+            'auditors': 'posha',
+            'fashionai': 'flipkart',
+            'cip': 'flipkart',
+            'airwriting': 'samsung',
+            'compositing': 'samsung',
+            'lits': 'iitd'
+        };
+
+        function showOrg(orgId, event) {
+            document.querySelectorAll('.org-content').forEach(content => {
                 content.classList.remove('active');
             });
-            
-            // Remove active class from all tabs
-            document.querySelectorAll('.project-tab').forEach(tab => {
+            document.querySelectorAll('.org-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
-            
-            // Show selected project and activate tab
-            const projectPanel = document.getElementById(`project-${projectId}`);
-            if (projectPanel) {
-                projectPanel.classList.add('active');
-                event.currentTarget.classList.add('active');
-                projectPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const orgPanel = document.getElementById(`org-${orgId}`);
+            if (orgPanel) {
+                orgPanel.classList.add('active');
+                if (event) event.currentTarget.classList.add('active');
             }
         }
 
-        // ============ EVENT LISTENERS ============
+        function showProject(projectId, event, noScroll = false) {
+            const orgId = projectToOrg[projectId];
+            if (orgId) {
+                const orgTab = document.querySelector(`.org-tab[data-org="${orgId}"]`);
+                showOrg(orgId, {currentTarget: orgTab});
+            }
+            document.querySelectorAll('.project-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.project-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            const projectPanel = document.getElementById(`project-${projectId}`);
+            if (projectPanel) {
+                projectPanel.classList.add('active');
+                if (event) event.currentTarget.classList.add('active');
+                if (!noScroll) {
+                    projectPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+
+        function showPatent(patentId, event) {
+            document.querySelectorAll('.patent-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.patent-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            const patentPanel = document.getElementById(`patent-${patentId}`);
+            if (patentPanel) {
+                patentPanel.classList.add('active');
+                event.currentTarget.classList.add('active');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            // Org tab navigation
+            document.querySelectorAll('.org-tab').forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    const orgId = this.dataset.org;
+                    showOrg(orgId, e);
+                    const firstProjectTab = document.querySelector(`#org-${orgId} .project-tab:first-child`);
+                    if (firstProjectTab) {
+                        const firstProjectId = firstProjectTab.dataset.project;
+                        showProject(firstProjectId, {currentTarget: firstProjectTab}, true);
+                    }
+                });
+            });
+
             // Project tab navigation
             document.querySelectorAll('.project-tab').forEach(tab => {
                 tab.addEventListener('click', function(e) {
                     const projectId = this.dataset.project;
                     showProject(projectId, e);
+                });
+            });
+
+            // Patent tab navigation
+            document.querySelectorAll('.patent-tab').forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    const patentId = this.dataset.patent;
+                    showPatent(patentId, e);
                 });
             });
 
@@ -991,10 +1307,7 @@
                     e.preventDefault();
                     const href = this.getAttribute('href');
                     const projectId = href.substring('#project-'.length);
-                    const tab = document.querySelector(`.project-tab[data-project="${projectId}"]`);
-                    if (tab) {
-                        showProject(projectId, { currentTarget: tab });
-                    }
+                    showProject(projectId, null);
                 });
             });
 
@@ -1003,17 +1316,13 @@
                 const hash = window.location.hash;
                 if (hash.startsWith('#project-')) {
                     const projectId = hash.substring('#project-'.length);
-                    const tab = document.querySelector(`.project-tab[data-project="${projectId}"]`);
-                    if (tab) {
-                        showProject(projectId, { currentTarget: tab });
-                    }
+                    showProject(projectId, null);
                 }
             }
 
-            // Handle hash changes and initial load
             window.addEventListener('hashchange', handleHash);
             handleHash();
         });
     </script>
 </body>
-</html>                         
+</html>
