@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Kumar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* ============ RESET & BASE STYLES ============ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c2c2c;
+            --text-color: #333;
+            --text-light: #666;
+            --text-lighter: #999;
+            --text-dark: #555;
+            --accent-color: #1a73e8;
+            --border-color: #e5e5e5;
+            --hover-bg: #f8f9fa;
+            --white: #fff;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============ TYPOGRAPHY ============ */
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            margin: 10px 0 25px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cv-btn {
+            border: 2px solid var(--primary-color);
+            padding: 8px 16px;
+            color: var(--primary-color) !important;
+        }
+
+        .cv-btn:hover {
+            background: var(--primary-color);
+            color: var(--white) !important;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            padding: 75px 0;
+            background: var(--white);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text {
+            text-align: justify;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .hero-text p {
+            color: var(--text-dark);
+            margin: 17.5px 0;
+            font-size: 16px;
+        }
+
+        .profile-image {
+            text-align: center;
+        }
+
+        .profile-image img {
+            border-radius: 50%;
+            border: 3px solid #ccc;
+            transition: var(--transition);
+        }
+
+        .profile-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .contact-info .fa-envelope { color: #0078d4; }
+        .contact-info .fa-phone { color: #00c853; }
+        .contact-info .fa-github { color: #211f1f; }
+        .contact-info .fa-linkedin { color: #0077b5; }
+        .contact-info .fa-medium { color: #000000; }
+
+        /* ============ SECTIONS ============ */
+        .section {
+            padding: 0 0 25px;
+        }
+
+        .section:last-of-type {
+            padding-bottom: 50px;
+        }
+
+        /* ============ EDUCATION ============ */
+        .education-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            text-align: center;
+        }
+
+        .education-item img {
+            height: 150px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .education-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .education-item h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0 0 10px;
+        }
+
+        .education-item a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        .education-item .degree {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-top: 10px;
+        }
+
+        /* ============ EXPERIENCE ============ */
+        .experience-item {
+            margin-bottom: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .experience-company {
+            font-size: 20px;
+        }
+
+        .experience-company a {
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        .experience-date {
+            font-size: 18px;
+            color: var(--text-color);
+        }
+
+        .experience-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-description li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .experience-description li:before {
+            content: "•";
+            color: #ccc;
+            position: absolute;
+            left: 0;
+        }
+
+        .experience-description a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .experience-description a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============ PUBLICATIONS ============ */
+        .publications-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .publication-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .publication-image {
+            flex-shrink: 0;
+            width: 200px;
+        }
+
+        .publication-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .publication-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .publication-content {
+            flex: 1;
+            padding-top: 5px;
+        }
+
+        .publication-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .publication-title a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .publication-title a:hover {
+            color: #0d47a1;
+        }
+
+        .publication-authors {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .publication-venue {
+            color: var(--text-lighter);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .publication-intro {
+            color: var(--text-dark);
+            font-size: 16px;
+            margin: 0;
+            text-align: justify;
+        }
+
+        .pub-separator {
+            width: 20%;
+            margin: 50px auto;
+            border: none;
+            border-top: 3px solid var(--text-color);
+        }
+
+        .patents-list {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .patent-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .patent-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .patent-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .patent-number {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .patent-status {
+            color: var(--accent-color);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .patent-description {
+            color: var(--text-dark);
+            font-size: 16px;
+            margin: 0;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .patent-separator {
+            width: 20%;
+            margin: 40px auto;
+            border: none;
+            border-top: 2px solid var(--border-color);
+        }
+
+        /* ============ PROJECTS ============ */
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            border: none;
+            background: var(--white);
+            color: var(--text-light);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: inherit;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+            margin-bottom: -1px;
+        }
+
+        .project-tab:hover {
+            color: var(--primary-color);
+        }
+
+        .project-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .project-content {
+            display: none;
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 15px;
+        }
+
+        .project-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(10px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .project-title {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .project-subtitle {
+            color: var(--text-light);
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .project-icon {
+            font-size: 32px;
+        }
+
+        .project-description ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .project-description li {
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 16px;
+            line-height: 1.7;
+            padding: 15px;
+            background: var(--white);
+            border-left: 4px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .project-description li:hover {
+            border-left-color: var(--primary-color);
+            background: var(--hover-bg);
+        }
+
+        .project-description li:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-description strong {
+            color: var(--primary-color);
+        }
+
+        .project-description a {
+            text-decoration: none;
+            color: var(--accent-color);
+        }
+
+        /* ============ INTERESTS ============ */
+        #interests {
+            padding: 25px 0;
+            margin-bottom: 50px;
+        }
+
+        #interests p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.4;
+            text-align: center;
+            font-size: 18px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        /* ============ RESPONSIVE DESIGN ============ */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .publication-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .publication-image {
+                width: 100%;
+            }
+            
+            .publication-image img {
+                width: 100%;
+                height: 120px;
+            }
+
+            .project-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-tab {
+                width: 200px;
+                text-align: center;
+            }
+        }
+
+        #education, #experience, #publications, #projects, #patents {
+            padding: 0px 0 50px 0; /* Reduce from 30px to 20px for tighter spacing */
+        }
+
+
+        /* ============ UTILITY CLASSES ============ */
+        .text-center { text-align: center; }
+        .text-justify { text-align: justify; }
+        .mb-0 { margin-bottom: 0; }
+        .mt-10 { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">ADITYA KUMAR</div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#patents">Patents</a></li>
+                        <li><a href="assets/Aditya.pdf" class="cv-btn" download>CV</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ HERO SECTION ============ -->
+        <section id="about" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Lead AI Engineer @ <a href="https://posha.com" target="_blank" rel="noopener noreferrer">Posha</a></h1>
+                        <p>Aditya is an AI Engineer with over six years of experience designing and deploying scalable, production-grade machine learning systems. His expertise spans Classical Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Recommendation Systems, Generative Models, and Reinforcement Learning. He is proficient in frameworks such as PyTorch, PyTorch Lightning, Keras, vLLM, LangChain, FastAPI, and AWS, enabling seamless model development and deployment.</p>
+                        
+                        <p>At Posha, Aditya leads end-to-end AI pipeline - from ideation and prototyping to real-time deployment - powering foundational robotic cooking capabilities through intelligent perception, control, and personalization systems.</p>
+                        
+                        <p>Prior to Posha, Aditya worked as an Applied Scientist at Flipkart, where he built a Competitive Intelligence Platform (CIP) from the ground up to ingest large-scale social media data and perform targeted sentiment analysis for product and brand monitoring. The platform was actively used by CXOs to track Flipkart's market share relative to competitors on a weekly basis. He previously served as a Machine Learning Engineer at Samsung Research Institute (SRI) in Noida, where he contributed to the development of advanced hand gesture recognition technologies.</p>
+                        
+                        <p>Aditya graduated in 2019 with a Bachelor's degree in Electrical Engineering (EE1) from the Indian Institute of Technology Delhi (IIT Delhi).</p>
+                        
+                        <div class="contact-info">
+                            <a href="mailto:adi.ee1iitd@gmail.com" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+919818495273" title="Phone">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="https://github.com/adi-iitd" target="_blank" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/adi-iitd/" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://medium.com/@adi.gupta" target="_blank" title="Medium">
+                                <i class="fab fa-medium"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-image">
+                        <img src="assets/1.jpeg" alt="Aditya Kumar Profile Photo" width="400" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ EDUCATION SECTION ============ -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <img src="assets/iitd_logo.png" alt="IIT Delhi Logo">
+                        <h3>
+                            <a href="https://home.iitd.ac.in/" target="_blank">Indian Institute of Technology Delhi (IIT Delhi)</a>
+                        </h3>
+                        <h3 class="degree">
+                            <strong>B.Tech in Electrical Engineering (2015 – 2019)</strong>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ EXPERIENCE SECTION ============ -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-company">
+                            <a href="https://posha.com" target="_blank" rel="noopener noreferrer">
+                                Lead AI Engineer @ <strong>Posha</strong>
+                            </a>
+                        </div>
+                        <div class="experience-date">Oct 2023 – Present</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li><strong><a href="#project-search" class="project-link">Search and Recommendation System:</a></strong> Built a hybrid search engine combining BM25 with domain-specific semantic embeddings (GIST-Embedding-v0) to support 700+ daily queries across 1,000 recipes and 200 ingredients. Trained multilingual models using LLM-augmented synthetic data to resolve fuzzy queries and enable Hindi-English code-mixed retrieval. Optimized retrieval using FAISS with sub-100ms latency. Drove a 30% gain in NDCG@5, 20% lift in recipe conversions, and 70% success on previously unsupported queries.</li>
+                            
+                            <li><strong><a href="#project-frying" class="project-link">Universal Frying Model (UFM):</a></strong> Built a Swin Transformer-based doneness predictor for real-time frying, using visual cues to eliminate fixed-timer failures. Generated labeled data via bucketed intervals and label mixing. Achieved 0.025 MAE with ~30ms latency on cloud, driving consistent, adaptive cooking outcomes across varied ingredients and lighting conditions.</li>
+                            
+                            <li><strong><a href="#project-segmentation" class="project-link">Food Segmentation & Dispense Localization:</a></strong> Developed a SegFormer-based real-time segmentation system for pans, food, and background in cluttered kitchen scenes (97% mIoU). Added dispense-localization module to isolate newly added ingredients (90% IoU) and boosted classification accuracy by applying Swin Transformer to localized regions (F1: 82%).</li>
+                            
+                            <li><strong><a href="#project-auditors" class="project-link">Vision-Based Quality Auditors:</a></strong> Built YOLOv8-based image quality validators to detect blur, glare, and occlusions (F1: 99.2%), enabling automated pausing and recovery. Added splatter and lump segmentation with SegFormer for food safety interventions, boosting recipe reliability in messy, real-world conditions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-company">
+                            <a href="https://flipkart.com" target="_blank" rel="noopener noreferrer">Applied Scientist II @ <strong>Flipkart</strong></a>
+                        </div>
+                        <div class="experience-date">Jan 2020 - Sep 2023</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li><strong><a href="#project-fashionai">FashionAI (Generative Design):</a></strong> Fine-tuned a diffusion model with full attribute control to generate high-fidelity fashion prototypes tailored to seller and platform requirements. Enabled attribute-conditioned image synthesis for guided design exploration, unlocking new monetization opportunities through generative fashion catalogs.</li>
+                            
+                            <li><strong><a href="#project-cip">Competitive Intelligence Platform (CIP):</a></strong> Built an NLP-driven social analytics engine to track brand performance across five major social platforms, tagging feedback by aspect, business unit, and sentiment. Leveraged few-shot learning and unsupervised clustering to extract hierarchical pain points—L1 aspects like Delivery or Cancellation, and L2 sub-aspects such as delivery SLA. Powered CXOs dashboards with CIP-derived insights, predicting weekly NPS with ~1% MAPE and BU-level market share with 1.5% MAE using regression ensembles.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-company">
+                            <a href="https://samsung.com" target="_blank" rel="noopener noreferrer">Engineer I @ <strong>Samsung Research Institute</strong></a>
+                        </div>
+                        <div class="experience-date">Jun 2019 - Dec 2019</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li><strong><a href="#project-airwriting">Gesture Recognition:</a></strong> Developed a sensor-free hand gesture recognition system for Latin characters and emojis. Achieved 98% IoU on hand segmentation using a MobileNet + DenseASPP architecture with curriculum learning, and 90% gesture classification accuracy via a DenseNet model, enabling real-time human-computer interaction in VR/AR environments.</li>
+                            
+                            <li><strong><a href="#project-compositing">Photorealistic Image Compositing:</a></strong> Used a Conditional GAN (Pix2Pix) to generate visually realistic composites with enhanced aesthetics. Trained a CNN in an unsupervised setting to model human perception of realism, and curated a custom dataset from COCO with color transfer improvements using learnable transformation functions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-company">
+                            <a href="https://home.iitd.ac.in/" target="_blank" rel="noopener noreferrer">Undergraduate Researcher @ <strong>Biomedical Imaging Lab, IIT Delhi</strong></a>
+                        </div>
+                        <div class="experience-date">Aug 2018 - May 2019</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li><strong><a href="#project-lits">Liver & Lesion Segmentation (LiTS):</a></strong> Collaborated with Medanta Hospital to automate liver and lesion segmentation from abdominal CT volumes using H-DenseUNet, achieving a Dice coefficient of 0.96 for liver segmentation. Improved patient-level classification accuracy by 20% across Healthy, Cirrhosis, and HCC categories by incorporating radiologist-supervised handcrafted features and SVM-based analysis.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PUBLICATIONS SECTION ============ -->
+        <section id="publications" class="section">
+            <div class="container">
+                <h2 class="section-title">Publications</h2>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-image">
+                            <img src="assets/publication1.jpg" alt="Publication 1">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="https://ieeexplore.ieee.org/document/9056013/" target="_blank">Data adaptive compressed sensing using deep neural network for image recognition</a>
+                            </div>
+                            <div class="publication-authors">R. Gupta, A. Kumar, S. Chaudhury, B. Lall, and V. Kaushik</div>
+                            <div class="publication-venue">IEEE: 2020 National Conference on Communications, 2020</div>
+                            <p class="publication-intro">This paper proposes a data-adaptive compressed sensing approach using neural networks for image recognition. Sampling considers the global context of the image, and a DNN is trained to reconstruct from compressed measurements. The method enhances efficiency by ~50% after reducing data requirements while maintaining recognition accuracy. Unlike traditional fixed sampling, the adaptive strategy prioritizes informative regions, leading to better task-driven compression.</p>
+                        </div>
+                    </div>
+
+                    <hr class="pub-separator">
+
+                    <div class="publication-item">
+                        <div class="publication-image">
+                            <img src="assets/publication2.jpg" alt="Publication 2">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">
+                                <a href="https://dl.acm.org/doi/10.1145/3487553.3524219" target="_blank">Deriving Customer Experience Implicitly from Social Media Data</a>
+                            </div>
+                            <div class="publication-authors">A. Kumar, S. Gupta, A. Sahu, and M. Kant</div>
+                            <div class="publication-venue">ACM Web Conference, 2022</div>
+                            <p class="publication-intro">This work introduces a mechanism to implicitly approximate customer experience from social media mentions across major platforms like Twitter and Instagram. Using NLP techniques, it tags feedback by aspects and sentiment to extract pain points. The platform enables CXOs to track market share and predict NPS with high accuracy. It also surfaces emerging trends and competitor comparisons in real time, helping brands proactively respond to shifting consumer perceptions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJECTS SECTION ============ -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Project Details</h2>
+                <div class="projects-container">
+                    <div class="project-tabs">
+                        <button class="project-tab active" data-project="search">Search System</button>
+                        <button class="project-tab" data-project="frying">Frying Model</button>
+                        <button class="project-tab" data-project="segmentation">Food Segmentation</button>
+                        <button class="project-tab" data-project="auditors">Quality Auditors</button>
+                    </div>
+
+                    <div id="project-search" class="project-content active">
+                        <div class="project-header">
+                            <h3 class="project-title">
+                                <span class="project-icon">🔍</span>
+                                Search and Recommendation System
+                            </h3>
+                            <p class="project-subtitle">Production-grade hybrid search engine with semantic understanding</p>
+                        </div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Addressed poor search performance in a consumer kitchen assistant app serving <strong>700-800</strong> daily queries by designing and deploying a production-grade hybrid search engine combining <strong>BM25 with GIST-Embedding-v0</strong> semantic models across <strong>1,000 recipes and 200 ingredients</strong>. Overcame lack of real training data due to missing user logs by training custom domain-specific embedding models using synthetic datasets generated through LLM-based augmentation and classical NLP techniques <strong>(character swaps, Levenshtein ≤3)</strong>, enabling semantic understanding of ingredient substitutions, recipe variations, and Hindi-English code-mixed queries.</li>
+                                <li>Solved poor fuzzy query handling by building a robust multilingual query correction system trained on synthetic spelling variants and transliteration patterns, enabling accurate retrieval for misspelled or multilingual inputs in Hindi and English. Eliminated slow search latency by optimizing infrastructure with <strong>FAISS binary quantized vectors for sub-20ms</strong> candidate generation, followed by full-precision re-ranking with personalized user embeddings, maintaining Elasticsearch-comparable performance while adding semantic capabilities.</li>
+                                <li><strong>Delivered measurable business impact</strong> through <strong>30% improvement in NDCG@5</strong> for exact matches, <strong>20% increase in recipe conversion rate</strong> (A/B tested), and <strong>70% retrieval success for previously unsupported fuzzy queries</strong> (compared to 0% baseline).</li>
+                                <li>Extended the trained semantic embeddings to power personalized recipe recommendations, combining <strong>content-based filtering</strong> (user preferences, dietary tags, cooking history) with <strong>collaborative filtering</strong> from similar users' behavior to deliver relevant suggestions for returning users. Solved the cold-start problem for new users with no cooking history by introducing an onboarding flow: users answer a short questionnaire <strong>(e.g., allergens, dietary habits, cuisine preferences, region) and select 3+ recipes</strong> from a tailored list. This information is used to build an initial user profile that powers content-based recommendations from day one—similar to onboarding flows in Netflix and Spotify.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="project-frying" class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">
+                                <span class="project-icon">🍲</span>
+                                Universal Frying Model (UFM)
+                            </h3>
+                            <p class="project-subtitle">Swin Transformer regression model for real-time doneness prediction</p>
+                        </div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Eliminated inconsistent cooking outcomes caused by fixed-timer failures by developing a <strong>Swin Transformer</strong> regression model that predicts ingredient doneness on a continuous <strong>0–1 scale</strong> using real-time visual cues. Solved training data scarcity by designing a bucketed data generation pipeline with labeled intervals <strong>(0.25–0.75)</strong> across lighting conditions, and synthesizing realistic multi-ingredient scenes via area-weighted label mixing with adjacent-bucket constraints.</li>
+                                <li>Achieved real-time inference by deploying a monitoring loop that processes raw camera frames every <strong>10 seconds</strong> with no preprocessing, delivering <strong>~30ms latency on cloud</strong> and <strong>~100ms on edge devices</strong> during active frying. Demonstrated strong generalization across diverse conditions with <strong>0.025 MAE</strong> on validation data from disjoint sessions and unseen lighting environments.</li>
+                                <li>Improved recipe quality by dynamically adapting frying duration to actual visual progression, eliminating timing-based failures and ensuring consistent results across ingredient variations and user prep styles.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="project-segmentation" class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">
+                                <span class="project-icon">🥘</span>
+                                Food and Ingredient Segmentation with Dispense Localization
+                            </h3>
+                            <p class="project-subtitle">Real-time SegFormer pipeline for ingredient detection and classification</p>
+                        </div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Addressed unreliable ingredient detection in cluttered kitchen environments by developing a real-time <strong>SegFormer</strong> segmentation pipeline for pan, food, robotic arms, and background detection, trained on <strong>1,500 annotated images</strong> across challenging conditions (occlusion, glare, low light). Overcame limited training data constraints by implementing self-distillation using <strong>2,000 pseudo-labeled frames</strong> with <strong>≥95% confidence</strong>, achieving <strong>97% mean IoU</strong> with a <strong>+1% gain</strong> from the expanded dataset.</li>
+                                <li>Solved ingredient identification challenges in mixed food scenarios by building a dispense localization module triggered <strong>2 seconds</strong> after each ingredient addition (max <strong>4 times per recipe</strong>), achieving <strong>90% IoU</strong> with a <strong>+3.5% improvement</strong> from distillation-based training. Improved ingredient classification by integrating <strong>Swin Transformer</strong> on localized regions, achieving <strong>85% accuracy</strong> and <strong>82% F1 score</strong> compared to sub-60% accuracy on full-pan images.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="project-auditors" class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">
+                                <span class="project-icon">🕵</span>
+                                Vision-Based Quality Auditors for Robotic Cooking
+                            </h3>
+                            <p class="project-subtitle">YOLOv8 and SegFormer systems for automated quality control</p>
+                        </div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Prevented unreliable predictions from degraded visual inputs by developing a <strong>YOLOv8</strong> image quality checker as first-stage validation, trained on <strong>5,000 edge-case images</strong> to detect blur, poor lighting, and occlusions, achieving <strong>92.5% IoU</strong> and <strong>99.2% F1 score</strong>. Implemented automated failure recovery by pausing recipe execution after <strong>5 consecutive bad frames</strong> and prompting user camera cleaning, preventing cascading errors in downstream vision models.</li>
+                                <li>Addressed splatter buildup in gravy-heavy recipes by building a <strong>SegFormer</strong>-based splatter detection system trained on <strong>500 annotated images</strong>, achieving <strong>70% IoU</strong> and automatically increasing stirrer speed to <strong>90%</strong> when splatter exceeds <strong>1%</strong> threshold.</li>
+                                <li>Eliminated food safety risks from undercooked lumps by implementing segmentation-based lump detection for meat (<strong>82% IoU</strong>) and noodles (<strong>88% IoU</strong>), triggering automated interventions (<strong>100ml water</strong> for noodles, <strong>50ml water + re-stirring</strong> for meat) to replicate human corrective actions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patents" class="section">
+            <div class="container">
+                <h2 class="section-title">Patents</h2>
+                <div class="patents-list">
+                    <div class="patent-item">
+                        <div class="patent-title">COUNTERTOP COOKING ROBOT</div>
+                        <div class="patent-number">PCT/US2024/061909</div>
+                        <div class="patent-status">Issued Jul 3, 2025</div>
+                        <p class="patent-description">A countertop cooking appliance that uses machine learning models to automatically prepare a plurality of different meals is described. The appliance includes a micro dispensing system containing a plurality of pods having granular contents. The pod rotation mechanism moves a selected pod into a position above a pan to dispense the granular contents. The rotation element rotates the selected pod to dispense an amount of granular content from the dispensing section with each rotation of the selected pod by the rotation element. The appliance may also include a stirrer that uses at least one spatula to gradually contact substantially an entire area of the pan after the stirrer completes a rotation cycle. Control circuitry coupled to a macro ingredient delivery system, the micro dispensing system, the stirrer, a heating element, and sensors performs recipe methods using a plurality of computer vision models to monitor recipe progress.</p>
+                    </div>
+        
+                    <hr class="patent-separator">
+        
+                    <div class="patent-item">
+                        <div class="patent-title">METHOD AND SYSTEM FOR MANAGING SENSOR OPERATION WITH RESPECT TO ACTIVITY</div>
+                        <div class="patent-number">202011042598</div>
+                        <div class="patent-status">Issued Jan 8, 2024</div>
+                        <p class="patent-description">The present subject matter refers a method for managing sensor operation with respect to sensor operation in a computing device. The method comprises detecting an activity based on at least one application in a computing device. An operation of a plurality of sensors within the device is monitored based on the detected activity. At-least one sensor is detected among the plurality of sensors based on said monitored operation. A set of sensors outputting readings within the device are selected, said selected set comprising at least one of one or more of said plurality of monitored sensors other than the ascertained sensor. A value for the detected activity is determined based on computing value of said at least one ascertained sensor based on a learned relation among the selected set of sensors and the outputted readings of one or more sensors within the selected set of sensors.</p>
+                    </div>
+        
+                    <hr class="patent-separator">
+        
+                    <div class="patent-item">
+                        <div class="patent-title">SYSTEM AND METHOD FOR DETERMINING MARKET SHARE OF AN ORGANIZATION</div>
+                        <div class="patent-number">202141036284</div>
+                        <div class="patent-status">Filed Aug 11, 2021</div>
+                        <p class="patent-description">A system and method for determining market share of an organization. The method encompasses receiving, at least one of a voice of customer data, an internal data of the organization and an external data. The method thereafter leads to determining, one or more set of target features based on at least one of the voice of customer data, the internal data of the organization and the external data. Further the method comprises generating, one or more pre-trained dataset based at least on the one or more set of target features. The method thereafter encompasses receiving, at least one of a first set of feature constraints and a second set of feature constraints. Further the method comprises determining, the market share of the organization based at least on the one or more pretrained dataset, the first set of feature constraints and the second set of feature constraints.</p>
+                    </div>
+        
+                    <hr class="patent-separator">
+        
+                    <div class="patent-item">
+                        <div class="patent-title">SYSTEM AND METHOD FOR GENERATION OF A USER FEEDBACK DATA</div>
+                        <div class="patent-number">202141010012</div>
+                        <div class="patent-status">Filed Mar 10, 2021</div>
+                        <p class="patent-description">A system and method for generation of a user feedback data is provided. The method encompasses extracting in real time, from social media platforms, a set of social media posts, wherein each social media post comprises mentions related to e-commerce platforms. The method thereafter encompasses categorizing, each social media post into one of a promotional post and non-promotional post. The method further comprises identifying, a sentiment associated with each social media post. Further, the method encompasses assigning, a customer experience node and/or a business unit with the social media posts. The method thereafter leads to removing, irrelevant posts from the set of social media posts. The method then generates the user feedback data based on the removal of the at least one irrelevant post and the assigned customer experience node, the assigned business unit and/or the sentiment of each social media post.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ INTERESTS SECTION ============ -->
+        <section id="interests" class="section">
+            <div class="container">
+                <h2 class="section-title">Interests</h2>
+                <p>Coding impactful solutions, writing tech blogs, and smashing it in cricket, table-tennis, and golf!</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // ============ PROJECT NAVIGATION ============
+        function showProject(projectId, event) {
+            // Hide all project contents
+            document.querySelectorAll('.project-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.project-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected project and activate tab
+            const projectPanel = document.getElementById(`project-${projectId}`);
+            if (projectPanel) {
+                projectPanel.classList.add('active');
+                event.currentTarget.classList.add('active');
+                projectPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // ============ EVENT LISTENERS ============
+        document.addEventListener('DOMContentLoaded', function() {
+            // Project tab navigation
+            document.querySelectorAll('.project-tab').forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    const projectId = this.dataset.project;
+                    showProject(projectId, e);
+                });
+            });
+
+            // Smooth scroll for navigation links (excluding project links)
+            document.querySelectorAll('a[href^="#"]:not(.project-link)').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Project link navigation from experience section
+            document.querySelectorAll('.project-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const projectId = href.substring('#project-'.length);
+                    const tab = document.querySelector(`.project-tab[data-project="${projectId}"]`);
+                    if (tab) {
+                        showProject(projectId, { currentTarget: tab });
+                    }
+                });
+            });
+
+            // Handle URL hash navigation
+            function handleHash() {
+                const hash = window.location.hash;
+                if (hash.startsWith('#project-')) {
+                    const projectId = hash.substring('#project-'.length);
+                    const tab = document.querySelector(`.project-tab[data-project="${projectId}"]`);
+                    if (tab) {
+                        showProject(projectId, { currentTarget: tab });
+                    }
+                }
+            }
+
+            // Handle hash changes and initial load
+            window.addEventListener('hashchange', handleHash);
+            handleHash();
+        });
+    </script>
+</body>
+</html>                         
