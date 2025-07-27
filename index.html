@@ -228,7 +228,7 @@
         /* ============ EXPERIENCE ============ */
         .experience-item {
             margin-bottom: 40px;
-            max-width: 1100px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -759,15 +759,11 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>Lead AI Engineer @ <a href="https://posha.com" target="_blank" rel="noopener noreferrer">Posha</a></h1>
-                        <p>Aditya is an AI Engineer with over six years of experience designing and deploying scalable, production-grade machine learning systems. His expertise spans Classical Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Recommendation Systems, Generative Models, and Reinforcement Learning. He is proficient in frameworks such as PyTorch, PyTorch Lightning, Keras, vLLM, LangChain, FastAPI, and AWS, enabling seamless model development and deployment.</p>
-                        
-                        <p>At Posha, Aditya leads end-to-end AI pipeline - from ideation and prototyping to real-time deployment - powering foundational robotic cooking capabilities through intelligent perception, control, and personalization systems.</p>
-                        
-                        <p>Prior to Posha, Aditya worked as an Applied Scientist at Flipkart, where he built a Competitive Intelligence Platform (CIP) from the ground up to ingest large-scale social media data and perform targeted sentiment analysis for product and brand monitoring. The platform was actively used by CXOs to track Flipkart's market share relative to competitors on a weekly basis. He previously served as a Machine Learning Engineer at Samsung Research Institute (SRI) in Noida, where he contributed to the development of advanced hand gesture recognition technologies.</p>
-                        
-                        <p>Aditya graduated in 2019 with a Bachelor's degree in Electrical Engineering (EE1) from the Indian Institute of Technology Delhi (IIT Delhi).</p>
-                        
+                        <h1>Lead ML Engineer @ <a href="https://posha.com" target="_blank" rel="noopener noreferrer">Posha</a></h1>
+                        <p>Aditya is a Machine Learning Engineer with over 6 years of experience designing and deploying scalable ML systems across diverse domains — including Classical Machine Learning (e.g., Linear and Logistic Regression, SVMs, XGBoost), Deep Learning, NLP, Reinforcement Learning, Computer Vision, and Recommendation Systems. He is proficient in frameworks like PyTorch, PyTorch Lightning, vLLM, LangChain, Keras, and FastAPI, enabling seamless end-to-end ML development and deployment.</p>
+                        <p>At Posha, a food robotics startup, Aditya leads the full-stack ML pipeline — spanning data collection, foundational model development, and deployment on both cloud and edge devices. His work powers robotic cooking through intelligent perception and adaptive control, while also enabling a rich user experience via personalized recipe generation and multilingual search tailored for diverse communities.</p>
+                        <p>Previously, he worked as an Applied Scientist II at Flipkart, where he built a Competitive Intelligence Platform (CIP) from the ground up to ingest large-scale social media data and perform targeted sentiment analysis for product and brand monitoring. It was adopted by CXOs to track Flipkart’s market positioning and sentiment dynamics on a weekly basis. He began his career as a MLE at Samsung Research, where he contributed to hand gesture recognition systems for human-computer interaction in AR/VR environments.</p>
+                        <p>Aditya graduated in 2019 with a Bachelor's degree in Electrical Engineering from the Indian Institute of Technology Delhi (IIT Delhi).</p>
                         <div class="contact-info">
                             <a href="mailto:adi.ee1iitd@gmail.com" title="Email">
                                 <i class="fas fa-envelope"></i>
@@ -827,13 +823,11 @@
                     </div>
                     <div class="experience-description">
                         <ul>
-                            <li><strong><a href="#project-search" class="project-link">Search and Recommendation System:</a></strong> Built a hybrid search engine combining BM25 with domain-specific semantic embeddings (GIST-Embedding-v0) to support 700+ daily queries across 1,000 recipes and 200 ingredients. Trained multilingual models using LLM-augmented synthetic data to resolve fuzzy queries and enable Hindi-English code-mixed retrieval. Optimized retrieval using FAISS with sub-100ms latency. Drove a 30% gain in NDCG@5, 20% lift in recipe conversions, and 70% success on previously unsupported queries.</li>
-                            
-                            <li><strong><a href="#project-frying" class="project-link">Universal Frying Model (UFM):</a></strong> Built a Swin Transformer-based doneness predictor for real-time frying, using visual cues to eliminate fixed-timer failures. Generated labeled data via bucketed intervals and label mixing. Achieved 0.025 MAE with ~30ms latency on cloud, driving consistent, adaptive cooking outcomes across varied ingredients and lighting conditions.</li>
-                            
-                            <li><strong><a href="#project-segmentation" class="project-link">Food Segmentation & Dispense Localization:</a></strong> Developed a SegFormer-based real-time segmentation system for pans, food, and background in cluttered kitchen scenes (97% mIoU). Added dispense-localization module to isolate newly added ingredients (90% IoU) and boosted classification accuracy by applying Swin Transformer to localized regions (F1: 82%).</li>
-                            
-                            <li><strong><a href="#project-auditors" class="project-link">Vision-Based Quality Auditors:</a></strong> Built YOLOv8-based image quality validators to detect blur, glare, and occlusions (F1: 99.2%), enabling automated pausing and recovery. Added splatter and lump segmentation with SegFormer for food safety interventions, boosting recipe reliability in messy, real-world conditions.</li>
+                            <li><strong><a href="#project-search" class="project-link">Search and Recommendation System:</a></strong> Built a hybrid search engine combining BM25 with domain-specific semantic embeddings (GIST-Embedding) to support 700+ daily queries across 1,000 recipes and 200 ingredients. Trained multilingual models using LLM-augmented synthetic data to resolve fuzzy queries and enable Hindi-English code-mixed retrieval. Deployed FAISS-based retrieval optimized for sub-100ms latency. Achieved a 30% gain in NDCG@5, a 20% lift in recipe conversions, and 70% success on previously unsupported queries.</li>
+                            <li><strong><a href="#project-frying" class="project-link">Universal Frying Model (UFM):</a></strong> Fine-tuned a Swin Transformer-based doneness predictor for real-time frying, leveraging visual cues to eliminate fixed-timer failures. Generated training data using bucketed doneness intervals and area-weighted label mixing. Achieved 0.025 MAE with ~30ms cloud latency, enabling consistent, adaptive cooking across varied ingredients, preparation styles, and lighting conditions.</li>
+                            <li><strong><a href="#project-segmentation" class="project-link">Food Segmentation & Dispense Localization:</a></strong> Fine-tuned a SegFormer-based real-time segmentation system for pan, food, robotic arms, and background in cluttered kitchen environments, achieving 97% mIoU. Integrated a dispense-localization module to isolate newly added ingredients with 90% IoU, and improved ingredient classification by applying a Swin Transformer to localized regions, reaching 82% F1 score.</li>
+                            <li><strong><a href="#project-auditors" class="project-link">Vision-Based Quality Auditors:</a></strong> Adapted YOLOv8-based image quality validators to detect blur (steam, oil/gravy splatter), glare, human obstructions, and occlusions from external utensils, achieving 99% F1. Enabled automated cooking pause & recovery. Integrated splatter detection (to prevent wall contamination) and lump identification (for food safety) using SegFormer, improving recipe reliability under messy, real-world conditions.</li>
+                            <li><strong><a href="#project-simplification" class="project-link">Recipe Customisation:</a></strong> Designed a recipe customization pipeline that adapts user-specified ingredient edits into instruction-level rewrites, grounded in device constraints and a knowledge base of machine, ingredient, and recipe semantics. Curated high-quality data using LLM-as-a-judge and DeepSeek-R1 with human-in-the-loop validation, and fine-tuned a Qwen-3 model in two stages (SFT + GRPO) to enable structured, traceable outputs and self-reflective reasoning, allowing the model to think through adaptations autonomously.</li>
                         </ul>
                     </div>
                 </div>
@@ -847,9 +841,8 @@
                     </div>
                     <div class="experience-description">
                         <ul>
-                            <li><strong><a href="#project-fashionai" class="project-link">FashionAI (Generative Design):</a></strong> Fine-tuned a diffusion model with full attribute control to generate high-fidelity fashion prototypes tailored to seller and platform requirements. Enabled attribute-conditioned image synthesis for guided design exploration, unlocking new monetization opportunities through generative fashion catalogs.</li>
-                            
-                            <li><strong><a href="#project-cip" class="project-link">Competitive Intelligence Platform (CIP):</a></strong> Built an NLP-driven social analytics engine to track brand performance across five major social platforms, tagging feedback by aspect, business unit, and sentiment. Leveraged few-shot learning and unsupervised clustering to extract hierarchical pain points—L1 aspects like Delivery or Cancellation, and L2 sub-aspects such as delivery SLA. Powered CXOs dashboards with CIP-derived insights, predicting weekly NPS with ~1% MAPE and BU-level market share with 1.5% MAE using regression ensembles.</li>
+                            <li><strong><a href="#project-cip" class="project-link">Competitive Intelligence Platform (CIP):</a></strong> Built an NLP-driven analytics system to track Flipkart’s brand performance across five major social platforms by ingesting organization-level feedback and tagging it by sentiment, business unit, and aspect for marketplace-level benchmarking. Partnered with business teams to define high-level (L1) aspects (e.g., Delivery, Cancellation), and applied topic modeling with few-shot learning to discover granular L2 sub-aspects (e.g., delivery SLA). These insights powered CXO dashboards with VoC (Voice of Customer) metrics, enabling weekly Net Promoter Score (NPS) forecasts with <strong>~1% MAPE</strong> and business unit–level market share predictions across <strong>8</strong> verticals with <strong>1.5% MAE</strong> using regression ensembles.</li>
+                            <li><strong><a href="#project-fashionai" class="project-link">FashionAI (Generative Design):</a></strong> Fine-tuned a diffusion model with full attribute control for high-fidelity fashion generation tailored to seller needs. Used Masked Textual Inversion to learn isolated attribute embeddings by masking irrelevant regions, outperforming DreamBooth and improving over baseline 'stability-ai' Stable Diffusion by 50%. Enabled precise attribute-conditioned synthesis with reliable generalization up to 4 attribute combinations, unlocking guided design and generative catalog monetization.</li>
                         </ul>
                     </div>
                 </div>
@@ -863,9 +856,8 @@
                     </div>
                     <div class="experience-description">
                         <ul>
-                            <li><strong><a href="#project-airwriting" class="project-link">Gesture Recognition:</a></strong> Developed a sensor-free hand gesture recognition system for Latin characters and emojis. Achieved 98% IoU on hand segmentation using a MobileNet + DenseASPP architecture with curriculum learning, and 90% gesture classification accuracy via a DenseNet model, enabling real-time human-computer interaction in VR/AR environments.</li>
-                            
-                            <li><strong><a href="#project-compositing" class="project-link">Photorealistic Image Compositing:</a></strong> Used a Conditional GAN (Pix2Pix) to generate visually realistic composites with enhanced aesthetics. Trained a CNN in an unsupervised setting to model human perception of realism, and curated a custom dataset from COCO with color transfer improvements using learnable transformation functions.</li>
+                            <li><strong><a href="#project-airwriting" class="project-link">Gesture Recognition:</a></strong> Developed a sensor-free hand gesture recognition system for Latin characters and emojis, enabling real-time interaction in AR/VR environments. Achieved 98% IoU for hand segmentation using a MobileNet + DenseASPP architecture with curriculum learning, and 90% classification accuracy with a DenseNet-based gesture recognizer.</li>
+                            <li><strong><a href="#project-compositing" class="project-link">Photorealistic Image Compositing:</a></strong> Trained a CNN in an unsupervised setting to model human perception of realism and filter out low-quality composites. Built a synthetic dataset by pasting segmented COCO objects onto random backgrounds using instance masks, with learnable color transfer for visual coherence. Trained a Conditional GAN (Pix2Pix) to generate realistic composites conditioned on background and target object pairs.</li>
                         </ul>
                     </div>
                 </div>
@@ -879,7 +871,7 @@
                     </div>
                     <div class="experience-description">
                         <ul>
-                            <li><strong><a href="#project-lits" class="project-link">Liver & Lesion Segmentation (LiTS):</a></strong> Collaborated with Medanta Hospital to automate liver and lesion segmentation from abdominal CT volumes using H-DenseUNet, achieving a Dice coefficient of 0.96 for liver segmentation. Improved patient-level classification accuracy by 20% across Healthy, Cirrhosis, and HCC categories by incorporating radiologist-supervised handcrafted features and SVM-based analysis.</li>
+                            <li><strong><a href="#project-lits" class="project-link">Liver & Lesion Segmentation (LiTS):</a></strong> Collaborated with Medanta Hospital to automate liver and lesion segmentation from abdominal CT volumes using H-DenseUNet (3D-CNN), achieving Dice scores of 0.96 for liver and 0.85 for lesions. Enhanced patient-level classification across Healthy, Cirrhosis, and HCC categories by 20% by integrating radiologist-supervised handcrafted features with SVM-based analysis.</li>
                         </ul>
                     </div>
                 </div>
@@ -901,7 +893,7 @@
                             </div>
                             <div class="publication-authors">R. Gupta, A. Kumar, S. Chaudhury, B. Lall, and V. Kaushik</div>
                             <div class="publication-venue">IEEE: 2020 National Conference on Communications, 2020</div>
-                            <p class="publication-intro">This paper proposes a data-adaptive compressed sensing approach using neural networks for image recognition. Sampling considers the global context of the image, and a DNN is trained to reconstruct from compressed measurements. The method enhances efficiency by ~50% after reducing data requirements while maintaining recognition accuracy. Unlike traditional fixed sampling, the adaptive strategy prioritizes informative regions, leading to better task-driven compression.</p>
+                            <p class="publication-intro">This paper proposes a privacy-preserving, data-adaptive compressive sensing framework for image recognition, enabling inference directly from compressed measurements without reconstructing full images. It replaces block-based random sampling with a learned, global-context-aware encoder that focuses on semantically informative regions. The approach reduces data by ~50% while preserving recognition accuracy, and eliminates the need to store or transmit raw visual data. Its strong generalization across large-scale datasets makes it well-suited for privacy-sensitive applications like elderly fall detection.</p>
                         </div>
                     </div>
 
@@ -917,7 +909,7 @@
                             </div>
                             <div class="publication-authors">A. Kumar, S. Gupta, A. Sahu, and M. Kant</div>
                             <div class="publication-venue">ACM Web Conference, 2022</div>
-                            <p class="publication-intro">This work introduces a mechanism to implicitly approximate customer experience from social media mentions across major platforms like Twitter and Instagram. Using NLP techniques, it tags feedback by aspects and sentiment to extract pain points. The platform enables CXOs to track market share and predict NPS with high accuracy. It also surfaces emerging trends and competitor comparisons in real time, helping brands proactively respond to shifting consumer perceptions.</p>
+                            <p class="publication-intro">This work presents a system for implicitly estimating customer experience from social media mentions across platforms such as Twitter, Instagram, LinkedIn, and Facebook. Using advanced NLP techniques, it tags feedback by marketplace, aspect, and sentiment to surface actionable pain points. The platform enables CXOs to track market share, detect emerging trends, and benchmark against competitors in real time, while accurately predicting NPS to drive proactive, data-informed brand strategy.</p>
                         </div>
                     </div>
 
@@ -933,7 +925,7 @@
                             </div>
                             <div class="publication-authors">A. Kumar</div>
                             <div class="publication-venue">Flipkart Data Science Conference, 2022</div>
-                            <p class="publication-intro">This paper introduces a multi-stage deep learning pipeline that extracts actionable VoC insights from social media posts in English, Hindi, and Hinglish. By leveraging real-time, large-scale user feedback from platforms like Twitter and Instagram, it overcomes the limitations of traditional survey-based methods. The pipeline identifies customer pain points and product-specific experiences at each journey stage, offering organizations a scalable, cost-effective solution for understanding and improving customer satisfaction.</p>
+                            <p class="publication-intro">This paper introduces a multi-stage deep learning pipeline for extracting actionable Voice of Customer (VoC) insights from social media posts in English, Hindi, and Hinglish. Leveraging real-time, large-scale feedback from platforms like Twitter and Instagram, it addresses the limitations of traditional surveys by identifying customer pain points and product-specific experiences across various journey stages. The approach provides organizations with a scalable, cost-effective solution for understanding and enhancing customer satisfaction.</p>
                         </div>
                     </div>
                 </div>
@@ -958,6 +950,7 @@
                             <button class="project-tab" data-project="frying">Frying Model</button>
                             <button class="project-tab" data-project="segmentation">Food Segmentation</button>
                             <button class="project-tab" data-project="auditors">Quality Auditors</button>
+                            <button class="project-tab" data-project="simplification">Recipe Customisation</button>
                         </div>
 
                         <div id="project-search" class="project-content active">
@@ -966,15 +959,15 @@
                                     <span class="project-icon">🔍</span>
                                     Search and Recommendation System
                                 </h3>
-                                <p class="project-subtitle">Production-grade hybrid search engine with semantic understanding</p>
+                                <p class="project-subtitle">Hybrid search engine and Recommendation System with semantic understanding</p>
                             </div>
-                            <div class="project-description">
+                            <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Addressed poor search performance in a consumer kitchen assistant app serving <strong>700-800</strong> daily queries by designing and deploying a production-grade hybrid search engine combining <strong>BM25 with GIST-Embedding-v0</strong> semantic models across <strong>1,000 recipes and 200 ingredients</strong>. Overcame lack of real training data due to missing user logs by training custom domain-specific embedding models using synthetic datasets generated through LLM-based augmentation and classical NLP techniques <strong>(character swaps, Levenshtein ≤3)</strong>, enabling semantic understanding of ingredient substitutions, recipe variations, and Hindi-English code-mixed queries.</li>
-                                    <li>Solved poor fuzzy query handling by building a robust multilingual query correction system trained on synthetic spelling variants and transliteration patterns, enabling accurate retrieval for misspelled or multilingual inputs in Hindi and English. Eliminated slow search latency by optimizing infrastructure with <strong>FAISS binary quantized vectors for sub-20ms</strong> candidate generation, followed by full-precision re-ranking with personalized user embeddings, maintaining Elasticsearch-comparable performance while adding semantic capabilities.</li>
-                                    <li><strong>Delivered measurable business impact</strong> through <strong>30% improvement in NDCG@5</strong> for exact matches, <strong>20% increase in recipe conversion rate</strong> (A/B tested), and <strong>70% retrieval success for previously unsupported fuzzy queries</strong> (compared to 0% baseline).</li>
-                                    <li>Extended the trained semantic embeddings to power personalized recipe recommendations, combining <strong>content-based filtering</strong> (user preferences, dietary tags, cooking history) with <strong>collaborative filtering</strong> from similar users' behavior to deliver relevant suggestions for returning users. Solved the cold-start problem for new users with no cooking history by introducing an onboarding flow: users answer a short questionnaire <strong>(e.g., allergens, dietary habits, cuisine preferences, region) and select 3+ recipes</strong> from a tailored list. This information is used to build an initial user profile that powers content-based recommendations from day one—similar to onboarding flows in Netflix and Spotify.</li>
-                                </ul>
+                                    <li>Users frequently entered misspelled recipe names, fuzzy spellings, Hindi-English code-mixed text, or vague descriptions—challenges amplified by the diversity of the user base. Traditional keyword search (BM25) failed to handle such noise effectively. To address this, deployed a hybrid search engine combining BM25 for exact matches with a fine-tuned <strong>GIST-Embedding</strong> model for semantic similarity. The system handled <strong>700–800 daily queries</strong> across <strong>~1,000 recipes</strong> and <strong>~200 ingredients</strong>, bridging the gap between precise matching and contextual understanding to improve discoverability for both structured filters and free-form queries.</li>
+                                    <li>Adapted a pre-trained <strong>GIST-Embedding</strong> model for two distinct tasks: (1) a <strong>query correction</strong> model trained using synthetic data generated via LLM-based augmentation and NLP techniques (e.g., character swaps, Levenshtein ≤<strong>3</strong>) to handle fuzzy spellings and Hindi-English code-mixed queries, and (2) a <strong>semantic retrieval</strong> model adapted using domain-specific Q/A pairs with hard negatives from related recipes to improve fine-grained semantic separation.</li>
+                                    <li>Built a <strong>4-stage</strong> search pipeline: (1) corrected each query token by matching it to its closest token in a binary-quantized embedding space using the query correction model, (2) expanded non-English tokens with language-specific synonyms, (3) retrieved <strong>~100</strong> candidates from the binary embedding space, and (4) re-ranked results using the full-precision semantic embedding model and business logic. FAISS-powered retrieval and re-ranking kept end-to-end latency under <strong>90ms</strong>. Improved search performance across key metrics: NDCG@5 lifted by <strong>30%</strong>, recipe-to-click conversion rate increased by <strong>20%</strong>, and fuzzy/transliterated query success rose to <strong>70%</strong> from a <strong>0%</strong> baseline.</li>
+                                    <li>Built a personalized recipe recommender using semantic embeddings with hybrid filtering that combined user preferences, dietary tags, and past cooking history with collaborative signals. Solved the cold-start problem by introducing an onboarding flow where users specify allergens, cooking habits, and select <strong>3+</strong> preferred recipes—similar to recommendation flows used by Netflix and Spotify.</li>
+                                </ul>                                                                                     
                             </div>
                         </div>
 
@@ -984,14 +977,14 @@
                                     <span class="project-icon">🍲</span>
                                     Universal Frying Model (UFM)
                                 </h3>
-                                <p class="project-subtitle">Swin Transformer regression model for real-time doneness prediction</p>
+                                <p class="project-subtitle">Regression model for real-time doneness prediction</p>
                             </div>
-                            <div class="project-description">
+                            <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Eliminated inconsistent cooking outcomes caused by fixed-timer failures by developing a <strong>Swin Transformer</strong> regression model that predicts ingredient doneness on a continuous <strong>0–1 scale</strong> using real-time visual cues. Solved training data scarcity by designing a bucketed data generation pipeline with labeled intervals <strong>(0.25–0.75)</strong> across lighting conditions, and synthesizing realistic multi-ingredient scenes via area-weighted label mixing with adjacent-bucket constraints.</li>
-                                    <li>Achieved real-time inference by deploying a monitoring loop that processes raw camera frames every <strong>10 seconds</strong> with no preprocessing, delivering <strong>~30ms latency on cloud</strong> and <strong>~100ms on edge devices</strong> during active frying. Demonstrated strong generalization across diverse conditions with <strong>0.025 MAE</strong> on validation data from disjoint sessions and unseen lighting environments.</li>
-                                    <li>Improved recipe quality by dynamically adapting frying duration to actual visual progression, eliminating timing-based failures and ensuring consistent results across ingredient variations and user prep styles.</li>
-                                </ul>
+                                    <li>Replaced fixed frying timers in robotic cooking systems with a Swin Transformer-based regression model that predicts ingredient doneness on a continuous 0–1 scale using real-time visual cues. This dynamic control eliminates under- and overcooking errors, delivering consistent results across diverse ingredients and preparation styles.</li>
+                                    <li>Addressed limited labeled data by collecting bucketed doneness annotations in the <strong>0–0.75</strong> range for individual ingredients under varied lighting conditions (dark, ambient, and bright). Each ingredient was cooked in isolation, and its region was localized using a food segmentation model to capture precise per-ingredient doneness masks. During training, synthetic multi-ingredient scenes were generated by blending up to <strong>3</strong> segmented ingredients into one frame. Labels were computed via area-weighted averaging of individual doneness scores, constrained to adjacent label buckets to preserve semantic consistency in the regression target space. This augmentation strategy substantially diversified and expanded the dataset.</li>
+                                    <li>Exported the model to <strong>ONNX</strong> and deployed a CPU-optimized inference pipeline that processes raw camera frames every <strong>10 seconds</strong> without preprocessing. Achieved low-latency inference with <strong>~30ms</strong> on cloud and <strong>~80ms</strong> on edge devices, generalizing well across lighting and ingredient variations with a validation MAE of <strong>0.025</strong>.</li>
+                                </ul>                               
                             </div>
                         </div>
 
@@ -1003,11 +996,11 @@
                                 </h3>
                                 <p class="project-subtitle">Real-time SegFormer pipeline for ingredient detection and classification</p>
                             </div>
-                            <div class="project-description">
+                            <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Addressed unreliable ingredient detection in cluttered kitchen environments by developing a real-time <strong>SegFormer</strong> segmentation pipeline for pan, food, robotic arms, and background detection, trained on <strong>1,500 annotated images</strong> across challenging conditions (occlusion, glare, low light). Overcame limited training data constraints by implementing self-distillation using <strong>2,000 pseudo-labeled frames</strong> with <strong>≥95% confidence</strong>, achieving <strong>97% mean IoU</strong> with a <strong>+1% gain</strong> from the expanded dataset.</li>
-                                    <li>Solved ingredient identification challenges in mixed food scenarios by building a dispense localization module triggered <strong>2 seconds</strong> after each ingredient addition (max <strong>4 times per recipe</strong>), achieving <strong>90% IoU</strong> with a <strong>+3.5% improvement</strong> from distillation-based training. Improved ingredient classification by integrating <strong>Swin Transformer</strong> on localized regions, achieving <strong>85% accuracy</strong> and <strong>82% F1 score</strong> compared to sub-60% accuracy on full-pan images.</li>
-                                </ul>
+                                    <li><strong>Food Segmentation</strong>: Annotated <strong>1,500</strong> real-world images captured under occlusion, glare, and low-light conditions in cluttered kitchen environments to train a SegFormer model for segmenting pan, food, robotic arms (fixed and rotating), and background. To scale the dataset, generated pseudo-labels on <strong>~10,000</strong> unlabeled frames using the trained model and selected <strong>2,000</strong> high-confidence samples (<strong>≥95%</strong> confidence) for self-distillation. Fine-tuned the model for a few additional epochs using both annotated and pseudo-labeled data, achieving <strong>97%</strong> mean IoU—a <strong>+1%</strong> improvement from distillation. The final model supports multiple downstream tasks, such as detecting pan state transitions for dynamic control in liquid-heavy recipes (e.g., cooking gravy, frying onion purée). Deployed via <strong>ONNX</strong> for CPU inference with <strong>120ms</strong> latency on edge device and <strong>70ms</strong> on cloud.</li>
+                                    <li><strong>Ingredient Localization and Classification</strong>: Developed a pipeline to detect and classify newly dispensed ingredients after each macro-dispense instruction (up to <strong>4</strong> times per session). Used a SegFormer model for localization, achieving <strong>90%</strong> IoU with a <strong>+3.5%</strong> gain from self-distillation. Cropped the localized regions and classified them using a Swin Transformer, reaching <strong>85%</strong> accuracy and <strong>82%</strong> F1 score—significantly outperforming full-pan classification (<strong>&lt;50%</strong> accuracy). This system enables automated recipe debugging by comparing user-executed recipes with ground-truth references to identify ingredient mismatches and compute step-level similarity scores. Deployed end-to-end via <strong>ONNX</strong> on CPU with <strong>200ms</strong> per-frame latency.</li>
+                                </ul>                                
                             </div>
                         </div>
 
@@ -1017,37 +1010,39 @@
                                     <span class="project-icon">🕵</span>
                                     Vision-Based Quality Auditors for Robotic Cooking
                                 </h3>
-                                <p class="project-subtitle">YOLOv8 and SegFormer systems for automated quality control</p>
+                                <p class="project-subtitle">YOLOv8 and SegFormer for automated quality control</p>
                             </div>
-                            <div class="project-description">
+                            <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Prevented unreliable predictions from degraded visual inputs by developing a <strong>YOLOv8</strong> image quality checker as first-stage validation, trained on <strong>5,000 edge-case images</strong> to detect blur, poor lighting, and occlusions, achieving <strong>92.5% IoU</strong> and <strong>99.2% F1 score</strong>. Implemented automated failure recovery by pausing recipe execution after <strong>5 consecutive bad frames</strong> and prompting user camera cleaning, preventing cascading errors in downstream vision models.</li>
-                                    <li>Addressed splatter buildup in gravy-heavy recipes by building a <strong>SegFormer</strong>-based splatter detection system trained on <strong>500 annotated images</strong>, achieving <strong>70% IoU</strong> and automatically increasing stirrer speed to <strong>90%</strong> when splatter exceeds <strong>1%</strong> threshold.</li>
-                                    <li>Eliminated food safety risks from undercooked lumps by implementing segmentation-based lump detection for meat (<strong>82% IoU</strong>) and noodles (<strong>88% IoU</strong>), triggering automated interventions (<strong>100ml water</strong> for noodles, <strong>50ml water + re-stirring</strong> for meat) to replicate human corrective actions.</li>
+                                    <li><strong>Image Auditor</strong>: Vision failures caused by blur, poor lighting, or occlusions can derail automated cooking. To preempt such failures, fine-tuned a <strong>YOLOv8</strong> model to serve as a real-time image quality auditor using <strong>5,000</strong> hand-annotated frames. Achieved <strong>92.5%</strong> IoU at the bounding box level and <strong>99.2%</strong> F1 score in binary classification (good vs. bad frames). The system pauses recipe execution after <strong>5</strong> consecutive bad frames and prompts users to clean the camera, preventing downstream vision breakdowns. Deployed via <strong>ONNX</strong> on CPU with <strong>~50ms</strong> latency on edge and <strong>~70ms</strong> on cloud.</li>
+                                    <li><strong>Splatter Detector</strong>: Oil and gravy splatter during cooking—especially in gravy-rich recipes—can contaminate the robot's surroundings and nearby walls. To address this, fine-tuned a <strong>SegFormer</strong> model on <strong>500</strong> annotated frames, achieving <strong>69.8%</strong> IoU. After each macro-dispense, the system resets its baseline using the previous frame to account for food falling on the main arm during dispensing. If splatter exceeds <strong>2%</strong> of the image area relative to the baseline, stirrer speed is increased to <strong>90%</strong> to minimize residue buildup and prevent cross-contamination. Deployed via <strong>ONNX</strong> on CPU with <strong>~120ms</strong> latency on edge and <strong>~70ms</strong> on cloud.</li>
+                                    <li><strong>Lump Detector</strong>: Undissolved lumps in meat or noodle dishes can affect health. To ensure a consistent and safe meal, implemented lump detection using a SegFormer model trained on end-of-session frames. Achieved <strong>69.8%</strong> IoU for meat and <strong>88%</strong> IoU for noodles. If lump area exceeds <strong>2%</strong> of the frame, the system adds <strong>100ml</strong> water and re-stirs for noodles, and <strong>50ml</strong> water and re-stirs for meat. Deployed via <strong>ONNX</strong> on CPU with <strong>~100ms</strong> latency on edge and <strong>~60ms</strong> on cloud.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
+                    <div id="project-simplification" class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">
+                                <span class="project-icon">🍳</span>
+                                Recipe Customisation
+                            </h3>
+                            <p class="project-subtitle">Automated Recipe Customisation using LLMs</p>
+                        </div>
+                        <div class="project-description" style="text-align: justify;">
+                            <ul>
+                                <li>Our recipes are rigid and assume fixed ingredient availability, but real-world users often lack one or more components. Simply skipping ingredients risks recipe failure. To solve this, we designed a flexible recipe customization pipeline that transforms user-specified edits—such as removals, substitutions, or additions—into precise instruction-level rewrites. These adaptations are grounded in robotic constraints (e.g., dispensing limits, heating parameters) and guided by a structured knowledge base of machine, ingredient, and recipe semantics. The system ensures modified recipes remain executable while preserving cooking logic, safety, and output quality.</li>
+                                <li>Curated a high-quality training dataset using LLM-based scoring (DeepSeek-R1 as evaluator) and human-in-the-loop validation to ensure correctness, traceability, and minimal edits. Fine-tuned a <strong>Qwen-3</strong> model in two stages: Supervised Fine-Tuning (SFT) followed by GRPO (Guided Reinforcement with Preference Optimization). SFT taught the model to produce structured JSON outputs aligned with our target schema and served as a strong initialization for GRPO—especially important for smaller LLMs lacking zero-shot generalization on complex, domain-specific tasks. GRPO then instilled step-wise reflective reasoning, ensuring each instruction rewrite is grounded in explicit transformation rules.</li>
+                                <li>This traceability enables a closed feedback loop: minor issues are addressed through prompt tuning, while larger or repeated failures lead to additional fine-tuning on targeted examples. The model thus evolves continuously while maintaining strict rule compliance and transparency.</li>
+                            </ul>                            
+                        </div>
+                    </div>
+
                     <div id="org-flipkart" class="org-content">
                         <div class="project-tabs">
-                            <button class="project-tab active" data-project="fashionai">FashionAI</button>
-                            <button class="project-tab" data-project="cip">CIP</button>
-                        </div>
-
-                        <div id="project-fashionai" class="project-content active">
-                            <div class="project-header">
-                                <h3 class="project-title">
-                                    <span class="project-icon">🎨</span>
-                                    FashionAI (Generative Design)
-                                </h3>
-                                <p class="project-subtitle">Fine-tuned diffusion model for attribute-controlled fashion generation</p>
-                            </div>
-                            <div class="project-description">
-                                <ul>
-                                    <li>Fine-tuned a diffusion model with full attribute control to generate high-fidelity fashion prototypes tailored to seller and platform requirements. Enabled attribute-conditioned image synthesis for guided design exploration, unlocking new monetization opportunities through generative fashion catalogs.</li>
-                                </ul>
-                            </div>
+                            <button class="project-tab active" data-project="cip">CIP</button>
+                            <button class="project-tab" data-project="fashionai">FashionAI</button>
                         </div>
 
                         <div id="project-cip" class="project-content">
@@ -1058,9 +1053,30 @@
                                 </h3>
                                 <p class="project-subtitle">NLP-driven social analytics for brand performance tracking</p>
                             </div>
-                            <div class="project-description">
+                            <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Built an NLP-driven social analytics engine to track brand performance across five major social platforms, tagging feedback by aspect, business unit, and sentiment. Leveraged few-shot learning and unsupervised clustering to extract hierarchical pain points—L1 aspects like Delivery or Cancellation, and L2 sub-aspects such as delivery SLA. Powered CXOs dashboards with CIP-derived insights, predicting weekly NPS with ~1% MAPE and BU-level market share with 1.5% MAE using regression ensembles.</li>
+                                    <li>Traditional Voice of Customer (VoC) programs rely heavily on surveys, interviews, and customer support logs, which are often expensive, biased, and limited in scale. To address these constraints, we built a scalable deep learning pipeline that leverages user-generated content across <strong>five major social media platforms</strong> to extract structured, actionable insights at the <strong>Organization × Journey Node × Product</strong> level. This pipeline processes feedback across <strong>11 Indic languages</strong>, including noisy Hindi-English code-mixed text, enabling brands to monitor public sentiment at scale and in real time. </li>
+                                    <li><strong>Multilingual Translation Pipeline</strong>:  Fine-tuned a multilingual model on the <strong>Samanantar</strong> dataset for standard Indic text and designed a synthetic data generation pipeline to address the scarcity of labeled code-mixed corpora. Feedback was first translated into English, where key noun phrases were extracted using POS tagging and replaced with sentinel tags representing domain-specific concepts (e.g., product, issue type). The abstracted text was then translated into Hindi, transliterated into Latin script using a custom in-house model, and finally reassembled by substituting the sentinel tags with the original noun phrases. This process produced high-fidelity Hindi-English code-mixed data, significantly improving downstream sentiment analysis and span extraction. </li>
+                                    <li><strong>Targeted Aspect-Based Sentiment Analysis (TABSA)</strong>: Curated a dataset of <strong>~15,000</strong> manually annotated feedback samples categorized across <strong>10</strong> key e-commerce aspects (e.g., Delivery, Refund, Customer Care) and <strong>3</strong> sentiment classes (Positive, Neutral, Negative). Focused on single-marketplace mentions to simplify annotation and enable dynamic runtime augmentation. Fine-tuned a <strong>T5</strong> (encoder-decoder) model using domain-specific augmentation strategies, including sentence interleaving (blending feedback from two marketplaces) and sentiment inversion (paraphrasing while flipping sentiment in one source). These techniques improved model robustness for real-world, multi-marketplace scenarios.</li>
+                                    <li><strong>Text Span Extraction and Sub-Aspect Discovery</strong>: Combined <strong>SQuAD</strong> with <strong>~5,000</strong> in-house annotated samples to fine-tune a span extraction model (<strong>T5</strong> ABSA-tuned checkpoint with a modified task prefix) that identifies supporting evidence for sentiment labels. Used unsupervised <strong>clustering and topic modeling</strong> to surface business-relevant sub-aspects (e.g., delivery SLA, packaging quality), and built a supervised classifier using <strong>few-shot learning</strong> (~100 examples/sub-aspect). All sub-aspects were vetted by business stakeholders for relevance and operational actionability.</li>
+                                    <li><strong>Product Tagging and VoC Score Aggregation</strong>: Built a structured pipeline to extract product mentions from feedback and map them to corresponding business units (BUs). This enabled generation of a granular Voice of Customer (VoC) score across <strong>organization × aspect × sub-aspect × BU</strong> dimensions. These insights surfaced actionable sentiment trends and issue hotspots across verticals, supporting data-driven decision-making at scale.</li>
+                                    <li><strong>Business KPI Forecasting</strong>: Used VoC scores as predictive features for key business metrics. Trained a regression model to forecast weekly Net Promoter Score (NPS) with <strong>~1% MAPE</strong>, and used an ensemble of linear regressors to estimate BU-level market share across <strong>8</strong> verticals with <strong>1.5% MAE</strong>. These forecasts were integrated into CXOs dashboards, giving them a real-time visibility into brand sentiment, customer pain points, and business performance.</li>
+                                </ul>                                                                                                                           
+                            </div>
+                        </div>
+
+                        <div id="project-fashionai" class="project-content active">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <span class="project-icon">🎨</span>
+                                    FashionAI (Generative Design)
+                                </h3>
+                                <p class="project-subtitle">Fine-tuned diffusion model for attribute-controlled fashion generation</p>
+                            </div>
+                            <div class="project-description" style="text-align: justify;">
+                                <ul>
+                                    <li>Tackled the high cost and time overhead of manual catalog photography by fine-tuning a diffusion model to generate high-quality apparel images tailored to seller-specific needs. The system supports controllable synthesis across key visual attributes like neckline, sleeve length, fabric, and color, and generalizes reliably to <strong>4-way attribute combinations</strong>. This enabled rapid prototyping and personalized visuals, allowing sellers to scale catalog creation, reduce go-to-market time, and unlock new monetization opportunities through automated visual merchandising.</li>
+                                    <li>Enhanced editing fidelity by applying <strong>Masked Textual Inversion</strong> to learn isolated attribute embeddings while masking irrelevant regions during training. This method outperformed DreamBooth and improved editing precision by <strong>50%</strong> over baseline stability-ai's <strong>Stable Diffusion</strong>, enabling targeted visual edits without quality degradation. Delivered consistent outputs across high-variance product lines like ethnic wear, t-shirts, and jeans.</li>
                                 </ul>
                             </div>
                         </div>
@@ -1080,9 +1096,13 @@
                                 </h3>
                                 <p class="project-subtitle">Sensor-free hand gesture recognition for characters and emojis</p>
                             </div>
-                            <div class="project-description">
+                            <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Developed a sensor-free hand gesture recognition system for Latin characters and emojis. Achieved 98% IoU on hand segmentation using a MobileNet + DenseASPP architecture with curriculum learning, and 90% gesture classification accuracy via a DenseNet model, enabling real-time human-computer interaction in VR/AR environments.</li>
+                                    <ul>
+                                        <li>Built a sensor-free hand gesture recognition system to enable low-cost, real-time interaction in AR/VR environments without relying on specialized hardware like depth sensors or gloves. Designed to run on standard RGB webcams, the system supports virtual typing, gaming, and accessibility use cases through accurate recognition of Latin characters and emoji gestures, facilitating natural, touchless communication.</li>
+                                        <li>Achieved <strong>98% IoU</strong> for hand segmentation using a lightweight MobileNet + DenseASPP architecture trained with curriculum learning to handle diverse lighting, occlusion, and pose variations. For classification, a DenseNet model achieved <strong>90% accuracy</strong> on a custom gesture dataset built using open-source datasets (HANDS17, EgoHands, HaGRID) and augmented with in-house examples to improve generalization. Delivered low-latency inference optimized for seamless AR/VR experiences.</li>
+                                        <li>Secured <strong>3rd place</strong> in Samsung’s internal Machine Learning competition. Presented a live demo to leadership teams from Korea and Noida, demonstrating accurate gesture recognition from 20 feet using a laptop’s built-in camera. The project was praised for its feasibility, real-world applicability, and innovation in sensor-free human-computer interaction.</li>
+                                    </ul>                                                                          
                                 </ul>
                             </div>
                         </div>
@@ -1095,10 +1115,12 @@
                                 </h3>
                                 <p class="project-subtitle">Conditional GAN for realistic image composition</p>
                             </div>
-                            <div class="project-description">
+                            <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Used a Conditional GAN (Pix2Pix) to generate visually realistic composites with enhanced aesthetics. Trained a CNN in an unsupervised setting to model human perception of realism, and curated a custom dataset from COCO with color transfer improvements using learnable transformation functions.</li>
-                                </ul>
+                                    <li>Designed a background replacement system for mobile devices, enabling users to swap backgrounds while preserving themselves as the primary subject. The objective was to generate realistic, artifact-free composites without manual annotations—powering features like background removal, object swapping, and visual editing in constrained environments.</li>
+                                    <li>Built a CNN-based model in an unsupervised setting to mimic human perception of realism. It was trained on real images (COCO + 1K ImageNet) and synthetic composites to learn discriminative cues of authenticity. To support this, a large-scale synthetic dataset was generated by overlaying segmented COCO objects onto diverse backgrounds using instance masks, with learnable color and lighting transformations for visual consistency. We used the realism model to filter out low-quality composites, yielding a high-quality dataset for downstream supervised training.</li>
+                                    <li>Trained a Pix2Pix Conditional Generative Adversarial Network (GAN) to generate visually coherent composites by blending one or two foreground objects onto independent background images. The model preserved spatial alignment and visual fidelity, enabling robust mobile deployment for applications like content creation, digital design, and background switching.</li>
+                                </ul>                                                                   
                             </div>
                         </div>
                     </div>
@@ -1116,10 +1138,12 @@
                                 </h3>
                                 <p class="project-subtitle">Automated segmentation and classification for liver CT scans</p>
                             </div>
-                            <div class="project-description">
+                            <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Collaborated with Medanta Hospital to automate liver and lesion segmentation from abdominal CT volumes using H-DenseUNet, achieving a Dice coefficient of 0.96 for liver segmentation. Improved patient-level classification accuracy by 20% across Healthy, Cirrhosis, and HCC categories by incorporating radiologist-supervised handcrafted features and SVM-based analysis.</li>
-                                </ul>
+                                    <li>Manual interpretation of abdominal CT scans for liver and lesion analysis is time-consuming, inconsistent, and not scalable. In collaboration with <strong>Medanta Hospital</strong>, we built an end-to-end deep learning system to automate <strong>liver and lesion segmentation</strong> and classify patients into <strong>Healthy</strong>, <strong>Cirrhosis</strong>, or <strong>Hepatocellular Carcinoma (HCC)</strong> categories—accelerating diagnosis and supporting consistent clinical decision-making.</li>
+                                    <li>Trained an <strong>H-DenseUNet</strong> on the <strong>LiTS dataset</strong>, achieving a <strong>Dice coefficient of 0.96</strong> for liver segmentation and <strong>0.92</strong> for lesion segmentation. Model robustly delineated anatomical boundaries across varied cases. Conducted <strong>supervoxel-level error analysis</strong> to isolate and reduce false positives, enhancing segmentation quality and reliability for downstream patient classification.</li>
+                                    <li>Fine-tuned an <strong>SVM with linear kernel</strong> using <strong>radiologist-guided</strong> handcrafted features, boosting patient-level classification accuracy by <strong>20%</strong> and slice-level accuracy by <strong>8%</strong>. These clinically validated features ensured relevance in real-world deployment and enabled integration into hospital radiology workflows.</li>
+                                </ul>                                  
                             </div>
                         </div>
                     </div>
@@ -1200,6 +1224,7 @@
             'frying': 'posha',
             'segmentation': 'posha',
             'auditors': 'posha',
+            'simplification': 'posha',
             'fashionai': 'flipkart',
             'cip': 'flipkart',
             'airwriting': 'samsung',
