@@ -63,10 +63,6 @@ This site is deployed on GitHub Pages. To deploy your own fork:
 
 Feel free to reach out for collaborations, discussions, or just to connect!
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 Thanks for visiting! ⭐ If you find this useful, star the repo!
