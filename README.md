@@ -57,7 +57,6 @@ This site is deployed on GitHub Pages. To deploy your own fork:
 ## 📫 Contact
 
 - **Email**: [adi.ee1iitd@gmail.com](mailto:adi.ee1iitd@gmail.com)
-- **Phone**: +91 9818495273
 - **GitHub**: [adi-iitd](https://github.com/adi-iitd)
 - **LinkedIn**: [adi-iitd](https://www.linkedin.com/in/adi-iitd/)
 - **Medium**: [@adi.gupta](https://medium.com/@adi.gupta)
