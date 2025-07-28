@@ -22,8 +22,6 @@ Aditya graduated in 2019 with a Bachelor's degree in Electrical Engineering from
 - **Indian Institute of Technology Delhi (IIT Delhi)**  
   B.Tech in Electrical Engineering (2015 – 2019)
 
-![IIT Delhi Logo](assets/iitd_logo.png)
-
 ## Experience
 
 ### Lead AI Engineer @ Posha (Oct 2023 – Present)
