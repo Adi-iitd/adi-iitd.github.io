@@ -1,6 +1,6 @@
 # Aditya Kumar's Portfolio
 
-Welcome to my personal portfolio! I'm Aditya Kumar, a Lead ML Engineer with over 6 years of experience in machine learning, deep learning, and AI systems. This [!GitHub Pages site(adi-iitd.github.io)] showcases my professional journey, projects, publications, and more.
+Welcome to my personal portfolio! I'm Aditya Kumar, a Lead ML Engineer with over 6 years of experience in machine learning, deep learning, and AI systems. This [GitHub Pages site](https://adi-iitd.github.io) showcases my professional journey, projects, publications, and more.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/adi-iitd/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/adi-iitd)
