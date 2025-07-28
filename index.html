@@ -1683,6 +1683,11 @@
                             behavior: 'smooth',
                             block: 'start'
                         });
+                        // Hide the navigation menu on mobile after clicking a link
+                        const navMenu = document.querySelector('nav ul');
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                        }
                     }
                 });
             });
@@ -1694,7 +1699,17 @@
                     const href = this.getAttribute('href');
                     const projectId = href.substring('#project-'.length);
                     showProject(projectId);
+                    // Hide the navigation menu on mobile after clicking a project link
+                    const navMenu = document.querySelector('nav ul');
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
                 });
+            });
+
+            // Hamburger menu toggle
+            document.querySelector('.hamburger').addEventListener('click', function() {
+                document.querySelector('nav ul').classList.toggle('active');
             });
 
             // Handle URL hash navigation
@@ -1709,12 +1724,6 @@
             window.addEventListener('hashchange', handleHash);
             handleHash();
         });
-
-        // Hamburger menu
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-        
     </script>
 </body>
 </html>
