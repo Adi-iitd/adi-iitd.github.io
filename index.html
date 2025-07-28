@@ -78,6 +78,11 @@
             color: var(--primary-color);
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -107,6 +112,16 @@
         .cv-btn:hover {
             background: var(--primary-color);
             color: var(--white) !important;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 10px;
         }
 
         /* ============ HERO SECTION ============ */
@@ -804,13 +819,38 @@
                 margin-bottom: 10px;
             }
 
+            .hamburger {
+                display: block;
+            }
+
             nav ul {
+                display: none;
+                flex-direction: column;
                 gap: 15px;
-                justify-content: center;
+                background: var(--white);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                z-index: 99;
+            }
+
+            nav ul.active {
+                display: flex;
             }
 
             nav a {
-                font-size: 12px;
+                font-size: 14px;
+                padding: 10px;
+                display: block;
+            }
+
+            .cv-btn {
+                margin-top: 10px;
+                display: inline-block;
             }
 
             .publication-item {
@@ -910,13 +950,18 @@
                 font-size: 18px;
             }
 
+            .hamburger {
+                font-size: 20px;
+                padding: 8px;
+            }
+
             nav ul {
-                gap: 10px;
-                justify-content: flex-start;
+                padding: 15px;
             }
 
             nav a {
-                font-size: 11px;
+                font-size: 13px;
+                padding: 8px;
             }
 
             .hero {
@@ -1048,6 +1093,7 @@
             <div class="header-content">
                 <div class="logo">ADITYA KUMAR</div>
                 <nav>
+                    <button class="hamburger"><i class="fas fa-bars"></i></button>
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#education">Education</a></li>
@@ -1274,7 +1320,7 @@
                                 <ul>
                                     <li>Users frequently entered misspelled recipe names, fuzzy spellings, Hindi-English code-mixed text, or vague descriptions—challenges amplified by the diversity of the user base. Traditional keyword search (BM25) failed to handle such noise effectively. To address this, deployed a hybrid search engine combining BM25 for exact matches with a fine-tuned <strong>GIST-Embedding</strong> model for semantic similarity. The system handled <strong>700–800 daily queries</strong> across <strong>~1,000 recipes</strong> and <strong>~200 ingredients</strong>, bridging the gap between precise matching and contextual understanding to improve discoverability for both structured filters and free-form queries.</li>
                                     <li>Adapted a pre-trained <strong>GIST-Embedding</strong> model for two distinct tasks: (1) a <strong>query correction</strong> model trained using synthetic data generated via LLM-based augmentation and NLP techniques (e.g., character swaps, Levenshtein ≤<strong>3</strong>) to handle fuzzy spellings and Hindi-English code-mixed queries, and (2) a <strong>semantic retrieval</strong> model adapted using domain-specific Q/A pairs with hard negatives from related recipes to improve fine-grained semantic separation.</li>
-                                    <li>Built a <strong>4-stage</strong> search pipeline: (1) corrected each query token by matching it to its closest token in a binary-quantized embedding space using the query correction model, (2) expanded non-English tokens with language-specific synonyms, (3) retrieved <strong>~100</strong> candidates from the binary embedding space, and (4) re-ranked results using the full-precision semantic embedding model and business logic. FAISS-powered retrieval retrieval kept end-to-end latency under <strong>90ms</strong>. Improved search performance across key metrics: NDCG@5 lifted by <strong>30%</strong>, recipe-to-click conversion rate increased by <strong>20%</strong>, and fuzzy/transliterated query success rose to <strong>70%</strong> from a <strong>0%</strong> baseline.</li>
+                                    <li>Built a <strong>4-stage</strong> search pipeline: (1) corrected each query token by matching it to its closest token in a binary-quantized embedding space using the query correction model, (2) expanded non-English tokens with language-specific synonyms, (3) retrieved <strong>~100</strong> candidates from the binary embedding space, and (4) re-ranked results using the full-precision semantic embedding model and business logic. FAISS-powered retrieval kept end-to-end latency under <strong>90ms</strong>. Improved search performance across key metrics: NDCG@5 lifted by <strong>30%</strong>, recipe-to-click conversion rate increased by <strong>20%</strong>, and fuzzy/transliterated query success rose to <strong>70%</strong> from a <strong>0%</strong> baseline.</li>
                                     <li>Built a personalized recipe recommender using semantic embeddings with hybrid filtering that combined user preferences, dietary tags, and past cooking history with collaborative signals. Solved the cold-start problem by introducing an onboarding flow where users specify allergens, cooking habits, and select <strong>3+</strong> preferred recipes—similar to recommendation flows used by Netflix and Spotify.</li>
                                 </ul>                                                                                     
                             </div>
@@ -1364,8 +1410,8 @@
                             </div>
                             <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Traditional Voice of Customer (VoC) programs rely heavily on surveys, interviews, and customer support logs, which are often expensive, biased, and limited in scale. To address these constraints, we built a scalable deep learning pipeline that leverages user-generated content across <strong>five major social media platforms</strong> to extract structured, actionable insights at the <strong>Organization × Journey Node × Product</strong> level. This pipeline processes feedback across <strong>11 Indic languages</strong>, including noisy Hindi-English code-mixed text, enabling brands to monitor public sentiment at scale and in real time. </li>
-                                    <li><strong>Multilingual Translation Pipeline</strong>:  Fine-tuned a multilingual model on the <strong>Samanantar</strong> dataset for standard Indic text and designed a synthetic data generation pipeline to address the scarcity of labeled code-mixed corpora. Feedback was first translated into English, where key noun phrases were extracted using POS tagging and replaced with sentinel tags representing domain-specific concepts (e.g., product, issue type). The abstracted text was then translated into Hindi, transliterated into Latin script using a custom in-house model, and finally reassembled by substituting the sentinel tags with the original noun phrases. This process produced high-fidelity Hindi-English code-mixed data, significantly improving downstream sentiment analysis and span extraction. </li>
+                                    <li>Traditional Voice of Customer (VoC) programs rely heavily on surveys, interviews, and customer support logs, which are often expensive, biased, and limited in scale. To address these constraints, we built a scalable deep learning pipeline that leverages user-generated content across <strong>five major social media platforms</strong> to extract structured, actionable insights at the <strong>Organization × Journey Node × Product</strong> level. This pipeline processes feedback across <strong>11 Indic languages</strong>, including noisy Hindi-English code-mixed text, enabling brands to monitor public sentiment at scale and in real time.</li>
+                                    <li><strong>Multilingual Translation Pipeline</strong>: Fine-tuned a multilingual model on the <strong>Samanantar</strong> dataset for standard Indic text and designed a synthetic data generation pipeline to address the scarcity of labeled code-mixed corpora. Feedback was first translated into English, where key noun phrases were extracted using POS tagging and replaced with sentinel tags representing domain-specific concepts (e.g., product, issue type). The abstracted text was then translated into Hindi, transliterated into Latin script using a custom in-house model, and finally reassembled by substituting the sentinel tags with the original noun phrases. This process produced high-fidelity Hindi-English code-mixed data, significantly improving downstream sentiment analysis and span extraction.</li>
                                     <li><strong>Targeted Aspect-Based Sentiment Analysis (TABSA)</strong>: Curated a dataset of <strong>~15,000</strong> manually annotated feedback samples categorized across <strong>10</strong> key e-commerce aspects (e.g., Delivery, Refund, Customer Care) and <strong>3</strong> sentiment classes (Positive, Neutral, Negative). Focused on single-marketplace mentions to simplify annotation and enable dynamic runtime augmentation. Fine-tuned a <strong>T5</strong> (encoder-decoder) model using domain-specific augmentation strategies, including sentence interleaving (blending feedback from two marketplaces) and sentiment inversion (paraphrasing while flipping sentiment in one source). These techniques improved model robustness for real-world, multi-marketplace scenarios.</li>
                                     <li><strong>Text Span Extraction and Sub-Aspect Discovery</strong>: Combined <strong>SQuAD</strong> with <strong>~5,000</strong> in-house annotated samples to fine-tune a span extraction model (<strong>T5</strong> ABSA-tuned checkpoint with a modified task prefix) that identifies supporting evidence for sentiment labels. Used unsupervised <strong>clustering and topic modeling</strong> to surface business-relevant sub-aspects (e.g., delivery SLA, packaging quality), and built a supervised classifier using <strong>few-shot learning</strong> (~100 examples/sub-aspect). All sub-aspects were vetted by business stakeholders for relevance and operational actionability.</li>
                                     <li><strong>Product Tagging and VoC Score Aggregation</strong>: Built a structured pipeline to extract product mentions from feedback and map them to corresponding business units (BUs). This enabled generation of a granular Voice of Customer (VoC) score across <strong>organization × aspect × sub-aspect × BU</strong> dimensions. These insights surfaced actionable sentiment trends and issue hotspots across verticals, supporting data-driven decision-making at scale.</li>
@@ -1384,7 +1430,7 @@
                             </div>
                             <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Tackled the high cost and time overhead of manual catalog photography by fine-tuning a diffusion model to generate high-quality apparel images tailored to seller-specific needs. The system supports controllable synthesis across key visual attributes like neckline, sleeve length, fabric, and color, and generalizes reliably to <strong>4-way attribute combinations</strong>. This enabled rapid prototyping and personalized visuals, allowing sellers to rapid scale catalog creation, reduce go-to-market time, and unlock new monetization opportunities through automated visual merchandising.</li>
+                                    <li>Tackled the high cost and time overhead of manual catalog photography by fine-tuning a diffusion model to generate high-quality apparel images tailored to seller-specific needs. The system supports controllable synthesis across key visual attributes like neckline, sleeve length, fabric, and color, and generalizes reliably to <strong>4-way attribute combinations</strong>. This enabled rapid prototyping and personalized visuals, allowing sellers to scale catalog creation, reduce go-to-market time, and unlock new monetization opportunities through automated visual merchandising.</li>
                                     <li>Enhanced editing fidelity by applying <strong>Masked Textual Inversion</strong> to learn isolated attribute embeddings while masking irrelevant regions during training. This method outperformed DreamBooth and improved editing precision by <strong>50%</strong> over baseline stability-ai's <strong>Stable Diffusion</strong>, enabling targeted visual edits without quality degradation. Delivered consistent outputs across high-variance product lines like ethnic wear, t-shirts, and jeans.</li>
                                 </ul>
                             </div>
