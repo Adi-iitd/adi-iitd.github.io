@@ -1709,6 +1709,12 @@
             window.addEventListener('hashchange', handleHash);
             handleHash();
         });
+
+        // Hamburger menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
     </script>
 </body>
 </html>
