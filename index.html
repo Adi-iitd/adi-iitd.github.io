@@ -198,9 +198,10 @@
         /* ============ SECTIONS ============ */
         .section {
             padding: 0 0 25px;
+            margin-bottom: 50px;
         }
-
         .section:last-of-type {
+            margin-bottom: 0;
             padding-bottom: 50px;
         }
 
@@ -673,6 +674,164 @@
             font-style: italic;
         }
 
+        /* Toggle Button Styles */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--primary-color);
+            padding: 8px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle .fas {
+            transition: var(--transition);
+        }
+
+        /* Desktop: Show toggle after nav links (top right) */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Add gap for toggle */
+        }
+
+        /* Mobile: Position toggle left of hamburger */
+        @media (max-width: 768px) {
+            nav {
+                gap: 10px;
+            }
+            .theme-toggle {
+                order: -1; /* Ensures it's first (left of hamburger) */
+            }
+            .hamburger {
+                order: 0;
+            }
+            nav ul {
+                order: 1; /* Pushes menu below when active */
+            }
+        }
+
+        /* Dark Mode Overrides */
+        body.dark {
+            --primary-color: #f5f5f5;
+            --text-color: #ececec;
+            --text-light: #d4d4d4;
+            --text-lighter: #b8b8b8;
+            --text-dark: #dcdcdc;
+            --accent-color: #4a90e2;
+            --border-color: #404040;
+            --hover-bg: #2a2a2a;
+            --white: #1c1c1c;
+        }
+
+        /* Additional dark mode tweaks for specific elements */
+        body.dark header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        body.dark .hero {
+            background: var(--white);
+        }
+
+        body.dark .experience-header {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        body.dark .project-description li {
+            border-left: 4px solid var(--border-color);
+        }
+
+        body.dark .project-description li:hover {
+            background: var(--hover-bg);
+        }
+
+        body.dark .patent-content,
+        body.dark .org-content,
+        body.dark .project-content {
+            background: var(--white);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        body.dark .patent-content::before,
+        body.dark .org-content::before,
+        body.dark .project-content::before {
+            background: linear-gradient(90deg, #f5f5f5, #d4d4d4);
+        }
+
+        body.dark .patent-tabs,
+        body.dark .org-tabs,
+        body.dark .project-tabs {
+            background: #2a2a2a;
+        }
+
+        body.dark .patent-tab:hover,
+        body.dark .org-tab:hover,
+        body.dark .project-tab:hover {
+            color: #f5f5f5;
+            background: rgba(224, 224, 224, 0.1);
+        }
+
+        body.dark .patent-tab.active,
+        body.dark .org-tab.active,
+        body.dark .project-tab.active {
+            color: #1c1c1c;
+            background: linear-gradient(135deg, #f5f5f5, #c0c0c0);
+            box-shadow: 0 2px 8px rgba(224, 224, 224, 0.3);
+        }
+
+        /* Invert profile image border if needed (optional) */
+        body.dark .profile-image img {
+            border: 3px solid #404040;
+        }
+
+        /* Ensure text/icons are visible in dark mode */
+        body.dark a {
+            color: var(--accent-color);
+        }
+
+        body.dark .contact-info a {
+            color: var(--text-light);
+        }
+
+        body.dark .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        body.dark .org-tab:not(.active),
+        body.dark .project-tab:not(.active),
+        body.dark .patent-tab:not(.active) {
+            color: #fff;
+        }
+
+        body.dark .patent-title {
+            color: var(--primary-color);
+        }
+
+        body.dark .patent-description {
+            color: var(--text-dark);
+        }
+
+        body.dark .contact-info .fa-github,
+        body.dark .contact-info .fa-medium {
+            color: var(--text-light);
+        }
+
+        body.dark .education-item img {
+            filter: invert(1);
+        }
+
+        body.dark .section-title {
+            color: #b39ddb;
+        }
+
         /* ============ RESPONSIVE DESIGN ============ */
         @media (max-width: 1024px) {
             .hero-content {
@@ -1093,7 +1252,6 @@
             <div class="header-content">
                 <div class="logo">ADITYA KUMAR</div>
                 <nav>
-                    <button class="hamburger"><i class="fas fa-bars"></i></button>
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#education">Education</a></li>
@@ -1103,6 +1261,10 @@
                         <li><a href="#patents">Patents</a></li>
                         <li><a href="assets/Aditya.pdf" class="cv-btn" download>CV</a></li>
                     </ul>
+                    <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i> <!-- Starts as moon (for light mode active) -->
+                    </button>
+                    <button class="hamburger"><i class="fas fa-bars"></i></button>
                 </nav>
             </div>
         </div>
@@ -1196,7 +1358,7 @@
                     </div>
                     <div class="experience-description" style="text-align: justify;">
                         <ul>
-                            <li><strong><a href="#project-cip" class="project-link">Competitive Intelligence Platform (CIP):</a></strong> Built an NLP-driven analytics system to track Flipkart’s brand performance across five major social platforms by ingesting organization-level feedback and tagging it by sentiment, business unit, and aspect for marketplace-level benchmarking. Partnered with business teams to define high-level (L1) aspects (e.g., Delivery, Cancellation), and applied topic modeling with few-shot learning to discover granular L2 sub-aspects (e.g., delivery SLA). These insights powered CXO dashboards with VoC (Voice of Customer) metrics, enabling weekly Net Promoter Score (NPS) forecasts with <strong>~1% MAPE</strong> and business unit–level market share predictions across <strong>8</strong> verticals with <strong>1.5% MAE</strong> using regression ensembles.</li>
+                            <li><strong><a href="#project-cip" class="project-link">Competitive Intelligence Platform (CIP):</a></strong> Built an NLP-driven analytics system to track Flipkart’s brand performance across five major social platforms by ingesting organization-level feedback and tagging it by sentiment, business unit, and aspect for marketplace-level benchmarking. Partnered with business teams to define high-level (L1) aspects (e.g., Delivery, Cancellation), and applied topic modeling with few-shot learning to discover granular L2 sub-aspects (e.g., delivery SLA). These insights powered CXO dashboards with VoC (Voice of Customer) metrics, enabling weekly Net Promoter Score (NPS) forecasts with ~1% MAPE and business unit–level market share predictions across 8 verticals with 1.5% MAE using regression ensembles.</li>
                             <li><strong><a href="#project-fashionai" class="project-link">FashionAI (Generative Design):</a></strong> Fine-tuned a diffusion model with full attribute control for high-fidelity fashion generation tailored to seller needs. Used Masked Textual Inversion to learn isolated attribute embeddings by masking irrelevant regions, outperforming DreamBooth and improving over baseline 'stability-ai' Stable Diffusion by 50%. Enabled precise attribute-conditioned synthesis with reliable generalization up to 4 attribute combinations, unlocking guided design and generative catalog monetization.</li>
                         </ul>
                     </div>
@@ -1724,6 +1886,40 @@
             window.addEventListener('hashchange', handleHash);
             handleHash();
         });
+
+        const body = document.body;
+        const toggleBtn = document.querySelector('.theme-toggle');
+        const toggleIcon = toggleBtn.querySelector('i');
+
+        // Function to set theme
+        function setTheme(isDark) {
+            if (isDark) {
+                body.classList.add('dark');
+                toggleIcon.classList.remove('fa-moon');
+                toggleIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark');
+                toggleIcon.classList.remove('fa-sun');
+                toggleIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initial theme: Check localStorage, default to light mode if none
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme === 'dark');
+        } else {
+            setTheme(false); // Explicitly set light mode as default
+        }
+
+        // Toggle on click
+        toggleBtn.addEventListener('click', () => {
+            const isDark = body.classList.contains('dark');
+            setTheme(!isDark);
+        });
+
     </script>
 </body>
 </html>
