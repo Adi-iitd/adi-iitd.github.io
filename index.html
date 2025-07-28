@@ -39,6 +39,11 @@
             padding: 0 20px;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         /* ============ TYPOGRAPHY ============ */
         .section-title {
             text-align: center;
@@ -77,6 +82,7 @@
             display: flex;
             list-style: none;
             gap: 30px;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -141,6 +147,7 @@
             border-radius: 50%;
             border: 3px solid #ccc;
             transition: var(--transition);
+            max-width: 400px;
         }
 
         .profile-image img:hover {
@@ -198,7 +205,7 @@
         }
 
         .education-item img {
-            height: 150px;
+            max-height: 150px;
             margin-bottom: 25px;
             transition: var(--transition);
         }
@@ -491,28 +498,6 @@
             margin: 0;
         }
 
-        @media (max-width: 768px) {
-            .patent-tabs {
-                flex-direction: column;
-                align-items: center;
-                gap: 6px;
-            }
-
-            .patent-tab {
-                width: 200px;
-                text-align: center;
-            }
-
-            .patent-content {
-                padding: 25px 20px;
-            }
-
-            .patent-meta {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
         /* ============ PROJECTS ============ */
         .org-tabs,
         .project-tabs {
@@ -674,10 +659,125 @@
         }
 
         /* ============ RESPONSIVE DESIGN ============ */
+        @media (max-width: 1024px) {
+            .hero-content {
+                gap: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text p {
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .experience-company {
+                font-size: 18px;
+            }
+
+            .experience-date {
+                font-size: 16px;
+            }
+
+            .experience-description li {
+                font-size: 15px;
+            }
+
+            .publication-title {
+                font-size: 17px;
+            }
+
+            .publication-authors,
+            .publication-venue {
+                font-size: 14px;
+            }
+
+            .publication-intro {
+                font-size: 15px;
+            }
+
+            .project-title {
+                font-size: 26px;
+            }
+
+            .project-subtitle {
+                font-size: 15px;
+            }
+
+            .project-description li {
+                font-size: 15px;
+            }
+
+            .patent-title {
+                font-size: 20px;
+            }
+
+            .patent-description {
+                font-size: 15px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .hero {
+                padding: 50px 0;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 30px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 26px;
+            }
+
+            .hero-text p {
+                font-size: 14px;
+                margin: 15px 0;
+            }
+
+            .profile-image img {
+                max-width: 300px;
+            }
+
+            .contact-info a {
+                margin-right: 15px;
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 0 0 20px;
+            }
+
+            .section:last-of-type {
+                padding-bottom: 40px;
+            }
+
+            #education, #experience, #publications, #projects, #patents {
+                padding: 0 0 40px 0;
+            }
+
+            .section-title {
+                font-size: 20px;
+                margin: 10px 0 20px;
+            }
+
+            .education-item h3 {
+                font-size: 20px;
+            }
+
+            .education-item .degree {
+                font-size: 16px;
             }
 
             .experience-header {
@@ -686,8 +786,27 @@
                 gap: 5px;
             }
 
+            .experience-company {
+                font-size: 18px;
+            }
+
+            .experience-date {
+                font-size: 16px;
+            }
+
+            .experience-item {
+                margin-bottom: 30px;
+            }
+
+            .experience-description li {
+                font-size: 14px;
+                padding-left: 15px;
+                margin-bottom: 10px;
+            }
+
             nav ul {
                 gap: 15px;
+                justify-content: center;
             }
 
             nav a {
@@ -705,26 +824,216 @@
             
             .publication-image img {
                 width: 100%;
-                height: 120px;
+                height: auto;
+                aspect-ratio: 1 / 1;
             }
 
+            .publication-title {
+                font-size: 16px;
+            }
+
+            .publication-authors,
+            .publication-venue {
+                font-size: 13px;
+            }
+
+            .publication-intro {
+                font-size: 14px;
+            }
+
+            .pub-separator {
+                margin: 30px auto;
+            }
+
+            .patent-tabs,
             .org-tabs,
             .project-tabs {
                 flex-direction: column;
                 align-items: center;
+                gap: 6px;
             }
 
+            .patent-tab,
             .org-tab,
             .project-tab {
-                width: 200px;
+                width: 100%;
+                max-width: 200px;
                 text-align: center;
+                padding: 10px 20px;
+            }
+
+            .patent-content,
+            .org-content,
+            .project-content {
+                padding: 25px 20px;
+            }
+
+            .patent-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .patent-title {
+                font-size: 18px;
+            }
+
+            .patent-description {
+                font-size: 14px;
+            }
+
+            .project-title {
+                font-size: 24px;
+                gap: 10px;
+            }
+
+            .project-subtitle {
+                font-size: 14px;
+            }
+
+            .project-description li {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            #interests p {
+                font-size: 16px;
+                padding: 0 15px;
             }
         }
 
-        #education, #experience, #publications, #projects, #patents {
-            padding: 0px 0 50px 0; /* Reduce from 30px to 20px for tighter spacing */
-        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
 
+            .logo {
+                font-size: 18px;
+            }
+
+            nav ul {
+                gap: 10px;
+                justify-content: flex-start;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero-text h1 {
+                font-size: 24px;
+            }
+
+            .hero-text p {
+                font-size: 13px;
+                margin: 12px 0;
+            }
+
+            .profile-image img {
+                max-width: 250px;
+            }
+
+            .contact-info {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .contact-info a {
+                margin-right: 10px;
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+
+            .education-item img {
+                max-height: 120px;
+            }
+
+            .education-item h3 {
+                font-size: 18px;
+            }
+
+            .education-item .degree {
+                font-size: 14px;
+            }
+
+            .experience-company {
+                font-size: 16px;
+            }
+
+            .experience-date {
+                font-size: 14px;
+            }
+
+            .experience-description li {
+                font-size: 13px;
+            }
+
+            .publication-title {
+                font-size: 15px;
+            }
+
+            .publication-authors,
+            .publication-venue {
+                font-size: 12px;
+            }
+
+            .publication-intro {
+                font-size: 13px;
+            }
+
+            .patent-tab,
+            .org-tab,
+            .project-tab {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+
+            .patent-content,
+            .org-content,
+            .project-content {
+                padding: 20px 15px;
+            }
+
+            .patent-title {
+                font-size: 16px;
+            }
+
+            .patent-number,
+            .patent-status {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+            .patent-description {
+                font-size: 13px;
+            }
+
+            .project-title {
+                font-size: 22px;
+            }
+
+            .project-subtitle {
+                font-size: 13px;
+            }
+
+            .project-description li {
+                font-size: 13px;
+                padding: 10px;
+            }
+
+            #interests p {
+                font-size: 14px;
+            }
+        }
 
         /* ============ UTILITY CLASSES ============ */
         .text-center { text-align: center; }
@@ -783,7 +1092,7 @@
                         </div>
                     </div>
                     <div class="profile-image">
-                        <img src="assets/1.jpeg" alt="Aditya Kumar Profile Photo" width="400" height="400">
+                        <img src="assets/1.jpeg" alt="Aditya Kumar Profile Photo">
                     </div>
                 </div>
             </div>
@@ -965,7 +1274,7 @@
                                 <ul>
                                     <li>Users frequently entered misspelled recipe names, fuzzy spellings, Hindi-English code-mixed text, or vague descriptions—challenges amplified by the diversity of the user base. Traditional keyword search (BM25) failed to handle such noise effectively. To address this, deployed a hybrid search engine combining BM25 for exact matches with a fine-tuned <strong>GIST-Embedding</strong> model for semantic similarity. The system handled <strong>700–800 daily queries</strong> across <strong>~1,000 recipes</strong> and <strong>~200 ingredients</strong>, bridging the gap between precise matching and contextual understanding to improve discoverability for both structured filters and free-form queries.</li>
                                     <li>Adapted a pre-trained <strong>GIST-Embedding</strong> model for two distinct tasks: (1) a <strong>query correction</strong> model trained using synthetic data generated via LLM-based augmentation and NLP techniques (e.g., character swaps, Levenshtein ≤<strong>3</strong>) to handle fuzzy spellings and Hindi-English code-mixed queries, and (2) a <strong>semantic retrieval</strong> model adapted using domain-specific Q/A pairs with hard negatives from related recipes to improve fine-grained semantic separation.</li>
-                                    <li>Built a <strong>4-stage</strong> search pipeline: (1) corrected each query token by matching it to its closest token in a binary-quantized embedding space using the query correction model, (2) expanded non-English tokens with language-specific synonyms, (3) retrieved <strong>~100</strong> candidates from the binary embedding space, and (4) re-ranked results using the full-precision semantic embedding model and business logic. FAISS-powered retrieval and re-ranking kept end-to-end latency under <strong>90ms</strong>. Improved search performance across key metrics: NDCG@5 lifted by <strong>30%</strong>, recipe-to-click conversion rate increased by <strong>20%</strong>, and fuzzy/transliterated query success rose to <strong>70%</strong> from a <strong>0%</strong> baseline.</li>
+                                    <li>Built a <strong>4-stage</strong> search pipeline: (1) corrected each query token by matching it to its closest token in a binary-quantized embedding space using the query correction model, (2) expanded non-English tokens with language-specific synonyms, (3) retrieved <strong>~100</strong> candidates from the binary embedding space, and (4) re-ranked results using the full-precision semantic embedding model and business logic. FAISS-powered retrieval retrieval kept end-to-end latency under <strong>90ms</strong>. Improved search performance across key metrics: NDCG@5 lifted by <strong>30%</strong>, recipe-to-click conversion rate increased by <strong>20%</strong>, and fuzzy/transliterated query success rose to <strong>70%</strong> from a <strong>0%</strong> baseline.</li>
                                     <li>Built a personalized recipe recommender using semantic embeddings with hybrid filtering that combined user preferences, dietary tags, and past cooking history with collaborative signals. Solved the cold-start problem by introducing an onboarding flow where users specify allergens, cooking habits, and select <strong>3+</strong> preferred recipes—similar to recommendation flows used by Netflix and Spotify.</li>
                                 </ul>                                                                                     
                             </div>
@@ -1075,7 +1384,7 @@
                             </div>
                             <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <li>Tackled the high cost and time overhead of manual catalog photography by fine-tuning a diffusion model to generate high-quality apparel images tailored to seller-specific needs. The system supports controllable synthesis across key visual attributes like neckline, sleeve length, fabric, and color, and generalizes reliably to <strong>4-way attribute combinations</strong>. This enabled rapid prototyping and personalized visuals, allowing sellers to scale catalog creation, reduce go-to-market time, and unlock new monetization opportunities through automated visual merchandising.</li>
+                                    <li>Tackled the high cost and time overhead of manual catalog photography by fine-tuning a diffusion model to generate high-quality apparel images tailored to seller-specific needs. The system supports controllable synthesis across key visual attributes like neckline, sleeve length, fabric, and color, and generalizes reliably to <strong>4-way attribute combinations</strong>. This enabled rapid prototyping and personalized visuals, allowing sellers to rapid scale catalog creation, reduce go-to-market time, and unlock new monetization opportunities through automated visual merchandising.</li>
                                     <li>Enhanced editing fidelity by applying <strong>Masked Textual Inversion</strong> to learn isolated attribute embeddings while masking irrelevant regions during training. This method outperformed DreamBooth and improved editing precision by <strong>50%</strong> over baseline stability-ai's <strong>Stable Diffusion</strong>, enabling targeted visual edits without quality degradation. Delivered consistent outputs across high-variance product lines like ethnic wear, t-shirts, and jeans.</li>
                                 </ul>
                             </div>
@@ -1098,12 +1407,10 @@
                             </div>
                             <div class="project-description" style="text-align: justify;">
                                 <ul>
-                                    <ul>
-                                        <li>Built a sensor-free hand gesture recognition system to enable low-cost, real-time interaction in AR/VR environments without relying on specialized hardware like depth sensors or gloves. Designed to run on standard RGB webcams, the system supports virtual typing, gaming, and accessibility use cases through accurate recognition of Latin characters and emoji gestures, facilitating natural, touchless communication.</li>
-                                        <li>Achieved <strong>98% IoU</strong> for hand segmentation using a lightweight MobileNet + DenseASPP architecture trained with curriculum learning to handle diverse lighting, occlusion, and pose variations. For classification, a DenseNet model achieved <strong>90% accuracy</strong> on a custom gesture dataset built using open-source datasets (HANDS17, EgoHands, HaGRID) and augmented with in-house examples to improve generalization. Delivered low-latency inference optimized for seamless AR/VR experiences.</li>
-                                        <li>Secured <strong>3rd place</strong> in Samsung’s internal Machine Learning competition. Presented a live demo to leadership teams from Korea and Noida, demonstrating accurate gesture recognition from 20 feet using a laptop’s built-in camera. The project was praised for its feasibility, real-world applicability, and innovation in sensor-free human-computer interaction.</li>
-                                    </ul>                                                                          
-                                </ul>
+                                    <li>Built a sensor-free hand gesture recognition system to enable low-cost, real-time interaction in AR/VR environments without relying on specialized hardware like depth sensors or gloves. Designed to run on standard RGB webcams, the system supports virtual typing, gaming, and accessibility use cases through accurate recognition of Latin characters and emoji gestures, facilitating natural, touchless communication.</li>
+                                    <li>Achieved <strong>98% IoU</strong> for hand segmentation using a lightweight MobileNet + DenseASPP architecture trained with curriculum learning to handle diverse lighting, occlusion, and pose variations. For classification, a DenseNet model achieved <strong>90% accuracy</strong> on a custom gesture dataset built using open-source datasets (HANDS17, EgoHands, HaGRID) and augmented with in-house examples to improve generalization. Delivered low-latency inference optimized for seamless AR/VR experiences.</li>
+                                    <li>Secured <strong>3rd place</strong> in Samsung’s internal Machine Learning competition. Presented a live demo to leadership teams from Korea and Noida, demonstrating accurate gesture recognition from 20 feet using a laptop’s built-in camera. The project was praised for its feasibility, real-world applicability, and innovation in sensor-free human-computer interaction.</li>
+                                </ul>                                                                          
                             </div>
                         </div>
 
